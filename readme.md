@@ -7,7 +7,7 @@
 
 - JWT Auth
 - RESTful API
-- Single Page Application(SPA)
+- Single Page Application (SPA)
 - POS
 - Category
 - Employee
