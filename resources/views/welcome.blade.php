@@ -19,13 +19,13 @@
     </head>
 
 
-    <body class="sb-nav-fixed" style="font-family: 'Play', sans-serif;">
+    <body class="sb-nav-fixed" style="background-image: url('{{ asset('backend/img/bg.jpg') }}');background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;">
 
-    <div id="app">     <!---VUE_JS er jonno ei id='app' div ta niyechi pora/entire body tar jonno--->
+    <div id="app" style="font-family: 'Play', sans-serif">     <!---VUE_JS er jonno ei id='app' div ta niyechi pora/entire body tar jonno--->
 
     <!-----------start_Top_Navbar----------->
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" id="topbar" v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/forget' ? false : true" style="display: none;"> <!-------------------->
-            <router-link class="navbar-brand" to="/home" style="font-family: 'Anton', sans-serif;font-family: 'Carter One', cursive;"> <img src="{{ asset('backend/img/logoNav.png') }}" style="height:40px"></router-link>
+            <router-link class="navbar-brand" to="/home"> <img src="{{ asset('backend/img/logoNav.png') }}" style="height:40px"></router-link>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">

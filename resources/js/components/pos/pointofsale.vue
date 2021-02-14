@@ -122,15 +122,15 @@
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Sub Total:
-                            <strong>Rp. {{ Number(subtotal).toLocaleString() }}</strong>
+                            <strong>{{ Number(subtotal).toLocaleString() }} IDR</strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Vat:
-                            <strong> {{ Number(vats.vat).toLocaleString() }} % </strong>
+                            <strong>{{ Number(pajak).toLocaleString() }} IDR</strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Total:
-                            <strong>Rp. {{ Number(subtotal*vats.vat /100 +subtotal).toLocaleString() }}</strong>
+                            <strong>{{ Number(totalall).toLocaleString() }} IDR</strong>
                         </li>
                     </ul>
                     <br>                   <!-----Expense_Insert_Table(Bottom_Left)------>
@@ -145,7 +145,7 @@
 
                         <label>Due Fee</label>                              <!---------"due" dynamic kora hoyeche------------>
                         <!-- <input type="text" class="form-control" required v-model="due"> -->
-                        <input type="text" class="form-control" required :value="((subtotal*vats.vat /100 +subtotal) - pay).toFixed(2)">
+                        <input type="text" class="form-control" disabled required :value="((totalall) - pay).toLocaleString()">
                         
                         <label>Payment Method</label>
                         <select class="form-control" v-model="payby">
@@ -310,6 +310,17 @@
                 }
                 return sum;
             },
+            pajak(){
+                let sum=0;
+                for(let i=0; i < this.cards.length; i++){
+                    sum += ((parseFloat(this.cards[i].pro_quantity) * parseFloat(this.cards[i].product_price)) * 0.10);
+                }
+                return sum;
+            },
+            totalall(){
+                let totall = this.subtotal + this.pajak;
+                return totall;
+            }
         },
         methods:{
             //--start cart methods--                //------------------3----
@@ -352,9 +363,9 @@
                     .catch()
             },
             orderdone(){
-                let total = this.subtotal * this.vats.vat /100 + this.subtotal;
-                let due = (total - this.pay).toFixed(2)         //variable.toFixed(2)=take 2 specified decimal number
-                var data = {qty:this.qty, subtotal:this.subtotal, customer_id:this.customer_id, payby:this.payby, pay:this.pay, due:due, vat:this.vats.vat, total:total}       //due:this.due //due_dynamic
+                let total = this.subtotal + this.pajak;
+                let due = this.totalall - this.pay;
+                var data = {qty:this.qty, subtotal:this.subtotal, customer_id:this.customer_id, payby:this.payby, pay:this.pay, due:due, vat:this.pajak, total:total}       //due:this.due //due_dynamic
 
                 axios.post('/api/orderdone/',data)
                 .then(()=>{

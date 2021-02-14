@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="container">
+<div class="container" style="margin-top:-3.5rem">
 <div class="row justify-content-left">
     <div class="col-lg-7 offset-1">
-        <div class="card shadow-lg border-primary rounded-lg mt-5">
+        <div class="card shadow mt-5">
             <div class="card-header"><h3 class="text-center text-primary font-weight-bold my-4">Register New Account</h3></div>
             <div class="card-body">
 
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="form-group mt-4 mb-0">
-                        <button type="submit" class="btn btn-primary btn-block"> Sign up </button>
+                        <button type="submit" class="btn btn-primary btn-block shadow"> Sign up </button>
                     </div>
                 </form>
             </div>

@@ -17,7 +17,6 @@ class CartController extends Controller
 
         if ($check) {
             $increment = DB::table('pos')->where('pro_id',$id)->increment('pro_quantity');
-
             $pos = DB::table('pos')->where('pro_id',$id)->first();
             $subtotal = $pos->pro_quantity * $pos->product_price;
             DB::table('pos')->where('pro_id',$id)->update(['sub_total' => $subtotal]);

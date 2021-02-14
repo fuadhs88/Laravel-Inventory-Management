@@ -45,36 +45,36 @@
                                 <tr>
                                     <td>Quantity</td>
                                     <td>:</td>
-                                    <td>{{ orders.qty }}</td>
+                                    <td>{{ Number(orders.qty).toLocaleString() }}</td>
                                 </tr>
                             </table>
                         </div>
                         <div class="col-lg-6 col-md-6 col-6">
                             <table class="table border" id="" width="100%" cellspacing="0">
                                 <tr>
-                                    <td width="30%">Sub-Total</td>
+                                    <td width="30%"><b>Sub-Total</b></td>
                                     <td width="5%">:</td>
-                                    <td width="65%">{{ orders.sub_total }}</td>
+                                    <td width="65%">Rp. {{ Number(orders.sub_total).toLocaleString() }}</td>
                                 </tr>
                                 <tr>
                                     <td>VAT</td>
                                     <td>:</td>
-                                    <td>{{ orders.vat }}</td>
+                                    <td>Rp. {{ Number(orders.vat).toLocaleString() }}</td>
                                 </tr>
                                 <tr>
                                     <td>Total</td>
                                     <td>:</td>
-                                    <td>{{ orders.total }}</td>
+                                    <td>Rp. {{ Number(orders.total).toLocaleString() }}</td>
                                 </tr>
                                 <tr>
                                     <td>Pay</td>
                                     <td>:</td>
-                                    <td>{{ orders.pay }}</td>
+                                    <td>Rp. {{ Number(orders.pay).toLocaleString() }}</td>
                                 </tr>
                                 <tr>
                                     <td>Due</td>
                                     <td>:</td>
-                                    <td>{{ orders.due }}</td>
+                                    <td>Rp. {{ Number(orders.due).toLocaleString() }}</td>
                                 </tr>
                                 <tr>
                                     <td>Payment Method</td>
@@ -119,9 +119,9 @@
                                     <td>{{ detail.product_name}}</td>
                                     <td>{{ detail.product_code}}</td>
                                     <td><img :src="'/'+detail.image" id="em_photo"></td>
-                                    <td>{{ detail.pro_quantity }}</td>
-                                    <td>{{ detail.product_price }}</td>
-                                    <td>{{ detail.sub_total }}</td>
+                                    <td>{{ Number(detail.pro_quantity).toLocaleString() }}</td>
+                                    <td>Rp. {{ Number(detail.product_price).toLocaleString() }}</td>
+                                    <td>Rp. {{ Number(detail.sub_total).toLocaleString() }}</td>
                                 </tr>
                             </tbody>
                         </table>
