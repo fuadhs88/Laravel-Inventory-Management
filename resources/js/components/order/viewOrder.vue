@@ -119,9 +119,9 @@
                                     <td>{{ detail.product_name}}</td>
                                     <td>{{ detail.product_code}}</td>
                                     <td><img :src="'/'+detail.image" id="em_photo"></td>
-                                    <td>{{ Number(detail.pro_quantity).toLocaleString() }}</td>
-                                    <td>Rp. {{ Number(detail.product_price).toLocaleString() }}</td>
-                                    <td>Rp. {{ Number(detail.sub_total).toLocaleString() }}</td>
+                                    <td>{{ Number(detail.pro_quantity).toLocaleString() }} IDR</td>
+                                    <td>{{ Number(detail.product_price).toLocaleString() }} IDR</td>
+                                    <td>{{ Number(detail.sub_total).toLocaleString() }} IDR</td>
                                 </tr>
                             </tbody>
                         </table>
