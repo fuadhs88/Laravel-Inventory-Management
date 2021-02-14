@@ -3,9 +3,14 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb mt-3 shadow">
             <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
+                <router-link to="/"><a href="#">Dashboard</a></router-link>
             </li>
-            <li class="breadcrumb-item active">Category / Edit</li>
+            <li class="breadcrumb-item">
+                <router-link to="/category"><a href="#">Category</a></router-link>
+            </li>
+            <li class="breadcrumb-item active">
+                Edit
+            </li>
         </ol>
         <!-- Icon Cards-->
         <div class="shadow" style="margin-bottom:2rem">

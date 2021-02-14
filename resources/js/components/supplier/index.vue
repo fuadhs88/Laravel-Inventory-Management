@@ -26,9 +26,9 @@
 
                             <thead class="align-middle shadow">
                             <tr class="text-white" style="background-color:#7E2E95;">
-                                <th scope="col">Name</th>
+                                <th style="width:15%">Name</th>
                                 <th scope="col">Photo</th>
-                                <th scope="col">Phone</th>
+                                <th style="width:15%">Phone</th>
                                 <th scope="col">Vendor</th>
                                 <th scope="col">Address</th>
                                 <th style="width:10%">Action</th>

@@ -1,8 +1,8 @@
 
 require('./bootstrap');
 
-// window.Vue = require('vue'); //or bellow line
-import Vue from 'vue'      //--these nxt 3_lines are newly added as we installed vue-router
+// window.Vue = require('vue');
+import Vue from 'vue'      
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
@@ -13,17 +13,17 @@ import {routes} from './routes';
 
 //---import User Class----
 import User from './helpers/User';
-window.User = User                  //--for 'globally' use
+window.User = User                 
 
 
 //----import Notification Class-------
-import Notification from './helpers/Notification';  //--for 'globally' use
+import Notification from './helpers/Notification';  
 window.Notification = Notification
 
 
 //----start-----Sweetalert2------
 import Swal from 'sweetalert2'
-window.Swal = Swal              //--for 'globally' use
+window.Swal = Swal              
 
 const Toast = Swal.mixin({
   toast: true,
@@ -37,20 +37,20 @@ const Toast = Swal.mixin({
   }
 })
 
-window.Toast = Toast;       //--for 'globally' use
+window.Toast = Toast;      
 //----End-----Sweetalert2------------//------
 
 
 //------Reload-----
-window.Reload = new Vue();   //--for reload() method /to instantly reload page
+window.Reload = new Vue();  
 
 
-const router = new VueRouter({  //------------
+const router = new VueRouter({ 
     routes,
-    mode: 'history'     //To remove '#' from URL
+    mode: 'history'    
 })
 
 const app = new Vue({
     el: '#app',
-    router         //-----------
+    router         
 });

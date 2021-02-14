@@ -49,16 +49,16 @@ let searchorder = require('./components/order/search.vue').default;
 
 export const routes = [
     //-------JWT/auth_routes--------
-    { path: '/', component: Login, name: '/' },   //--amra ekane (name:'blah') ta use korteo pari,Nao pari,Not mendatory
-    { path: '/register', component: Register, name: 'register' },   //--JWT-auth
+    { path: '/', component: Login, name: '/' },   
+    { path: '/register', component: Register, name: 'register' },   
     { path: '/forget', component: forgetPass, name: 'forget' },
     { path: '/logout', component: logout, name: 'logout' },
     //-------home_route----------
-    { path: '/home', component: home, name: 'home' },       //--home_route
+    { path: '/home', component: home, name: 'home' },       
     //-------Employee_routes-------
     { path: '/store-employee', component: storeEmployee, name:'store-employee' },
-    { path: '/employee', component: employee, name:'employee' },   //route'r sate 'path' working,'name' not working
-    { path: '/edit-employee/:id', component: editEmployee, name:'edit-employee' },  //-------------------
+    { path: '/employee', component: employee, name:'employee' },   
+    { path: '/edit-employee/:id', component: editEmployee, name:'edit-employee' }, 
     //-------Supplier_routes-----------
     { path: '/store-supplier', component: storeSupplier, name:'store-supplier' },
     { path: '/supplier', component: Supplier, name:'supplier' },

@@ -36,7 +36,7 @@ class PosController extends Controller
         $data['order_date']=date('d/m/Y');
         $data['order_month']=date('F');
         $data['order_year']=date('Y');
-        $order_id=DB::table('orders')->insertGetId($data);   //--insert + get last Inserted order's id--
+        $order_id=DB::table('orders')->insertGetId($data);  
 
         $contents=DB::table('pos')->get();
 
@@ -60,7 +60,7 @@ class PosController extends Controller
     }
 
 
-//-------------home_component----------------------------
+//----------------------------------------- Card Dashboard Component
     public function TodaySell()
     {
         $date = date('d/m/Y');

@@ -2,7 +2,7 @@
 <template>
     <div>   <!-----total_<div>----->
 <!--------------------Dashboard------------------------>
-<h1 class="mt-4" style="font-weight: 900;">Dashboard</h1>
+<h1 class="mt-4" style="font-weight: 900;color:white">DASHBOARD</h1>
 <ol class="breadcrumb mb-4 shadow">
     <li class="breadcrumb-item active">Summary Report UMKM Gonkricaw</li>
 </ol>

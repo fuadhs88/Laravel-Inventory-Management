@@ -180,12 +180,12 @@
             },
         },
         methods:{
-            searchDate(){
-                var data = {date: this.date}
-                axios.post('/api/search/order',data)
-                    .then(({data}) => (this.orders = data))
-                    .catch()
-            },
+            // searchDate(){
+            //     var data = {date: this.date}
+            //     axios.post('/api/search/order',data)
+            //         .then(({data}) => (this.orders = data))
+            //         .catch()
+            // },
             searchMonth(){
                 var data = {month: this.month}
                 axios.post('/api/search/month',data)

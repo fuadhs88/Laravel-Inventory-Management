@@ -33,14 +33,14 @@
                             <!-----Search----->
                             <input type="text" v-model="searchTerm" class="form-control" placeholder="Search here..."><br>
                             <div class="row">
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-6" v-for="product in filtersearch" :key="product.id">
+                                <div v-for="product in filtersearch" :key="product.id">
                                     <button class="btn btn-sm" @click.prevent="AddToCart(product.id)">  <!--------3------->
-                                        <div class="card shadow" style="width: 9rem; height: 100%;">
+                                        <div class="card shadow" style="width:9.85rem">
                                             <img :src="product.image" class="card-img-top" style="width: 100%;">
                                             <div class="card-body">
                                                 <small class="card-title">{{ product.product_name }}</small><br>
-                                                <span class="badge badge-success" style="padding:5px" v-if="product.product_quantity >= 1"> Availble ({{ Number(product.product_quantity).toLocaleString()  }}) </span>
-                                                <span class="badge badge-danger" v-else>Stock Out</span>
+                                                <span class="badge badge-success" style="padding:5px;margin-bottom:10px;margin-top:10px;" v-if="product.product_quantity >= 1"> Availble ({{ Number(product.product_quantity).toLocaleString()  }}) </span>
+                                                <span class="badge badge-danger" style="padding:5px;margin-bottom:10px;margin-top:10px;" v-else>Stock Out</span>
                                                 <span class="text-primary d-block m-0 p-0 small">{{ Number(product.selling_price).toLocaleString() }} IDR</span>
                                             </div>
                                         </div>
@@ -52,7 +52,7 @@
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                             <input type="text" v-model="getsearchTerm" class="form-control" placeholder="Search here..."><br>
                             <div class="row">
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-6" v-for="getproduct in getfiltersearch" :key="getproduct.id">
+                                <div v-for="getproduct in getfiltersearch" :key="getproduct.id">
                                     <button class="btn btn-sm" @click.prevent="AddToCart(getproduct.id)">
                                         <div class="card shadow" style="width: 9rem; height: 100%;">
                                             <img :src="getproduct.image" class="card-img-top" style="width: 100%;">

@@ -3,7 +3,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb mt-3 shadow">
             <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
+                <router-link to="/"><a href="#">Dashboard</a></router-link>
             </li>
             <li class="breadcrumb-item active">All Category</li>
         </ol>

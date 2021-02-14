@@ -2017,10 +2017,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//-------------------------------------------
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
-    //--will load created() before others
     if (User.loggedIn()) {
       this.$router.push({
         name: 'home'
@@ -2031,7 +2031,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: {
         email: null,
-        //--OR-- ''(blank)---
         password: null
       },
       errors: {}
@@ -2041,8 +2040,7 @@ __webpack_require__.r(__webpack_exports__);
     login: function login() {
       var _this = this;
 
-      axios.post('/api/auth/login', this.form) //.then(response => console.log(response.data))   //--here,(token+other's_info) situated in 'data' property
-      .then(function (response) {
+      axios.post('/api/auth/login', this.form).then(function (response) {
         User.responseAfterLogin(response);
         Toast.fire({
           icon: 'success',
@@ -2051,10 +2049,8 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.$router.push({
           name: 'home'
-        }); // or, //this.$router.push('/home')
-
-      }) //.catch(error => console.log(error.response.data))
-      ["catch"](function (error) {
+        });
+      })["catch"](function (error) {
         return _this.errors = error.response.data.errors;
       })["catch"](Toast.fire({
         icon: 'warning',
@@ -2263,6 +2259,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -2307,6 +2308,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4265,26 +4271,21 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    searchDate: function searchDate() {
-      var _this = this;
-
-      var data = {
-        date: this.date
-      };
-      axios.post('/api/search/order', data).then(function (_ref) {
-        var data = _ref.data;
-        return _this.orders = data;
-      })["catch"]();
-    },
+    // searchDate(){
+    //     var data = {date: this.date}
+    //     axios.post('/api/search/order',data)
+    //         .then(({data}) => (this.orders = data))
+    //         .catch()
+    // },
     searchMonth: function searchMonth() {
-      var _this2 = this;
+      var _this = this;
 
       var data = {
         month: this.month
       };
-      axios.post('/api/search/month', data).then(function (_ref2) {
-        var data = _ref2.data;
-        return _this2.orders = data;
+      axios.post('/api/search/month', data).then(function (_ref) {
+        var data = _ref.data;
+        return _this.orders = data;
       });
     }
   }
@@ -51445,7 +51446,33 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("ol", { staticClass: "breadcrumb mt-3 shadow" }, [
+      _c(
+        "li",
+        { staticClass: "breadcrumb-item" },
+        [
+          _c("router-link", { attrs: { to: "/" } }, [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Dashboard")])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        { staticClass: "breadcrumb-item" },
+        [
+          _c("router-link", { attrs: { to: "/category" } }, [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Category")])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("li", { staticClass: "breadcrumb-item active" }, [
+        _vm._v("\n            Insert\n        ")
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -51547,22 +51574,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ol", { staticClass: "breadcrumb mt-3 shadow" }, [
-      _c("li", { staticClass: "breadcrumb-item" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Dashboard")])
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "breadcrumb-item active" }, [
-        _vm._v("Category / Insert")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -51585,7 +51597,33 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("ol", { staticClass: "breadcrumb mt-3 shadow" }, [
+      _c(
+        "li",
+        { staticClass: "breadcrumb-item" },
+        [
+          _c("router-link", { attrs: { to: "/" } }, [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Dashboard")])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        { staticClass: "breadcrumb-item" },
+        [
+          _c("router-link", { attrs: { to: "/category" } }, [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Category")])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("li", { staticClass: "breadcrumb-item active" }, [
+        _vm._v("\n            Edit\n        ")
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -51683,22 +51721,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ol", { staticClass: "breadcrumb mt-3 shadow" }, [
-      _c("li", { staticClass: "breadcrumb-item" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Dashboard")])
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "breadcrumb-item active" }, [
-        _vm._v("Category / Edit")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -51721,7 +51744,22 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("ol", { staticClass: "breadcrumb mt-3 shadow" }, [
+      _c(
+        "li",
+        { staticClass: "breadcrumb-item" },
+        [
+          _c("router-link", { attrs: { to: "/" } }, [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Dashboard")])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("li", { staticClass: "breadcrumb-item active" }, [
+        _vm._v("All Category")
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -51758,7 +51796,7 @@ var render = function() {
                   staticStyle: { width: "400px" }
                 },
                 [
-                  _vm._m(1),
+                  _vm._m(0),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -51797,7 +51835,7 @@ var render = function() {
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
-                  _vm._m(2),
+                  _vm._m(1),
                   _vm._v(" "),
                   _c(
                     "tbody",
@@ -51864,20 +51902,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ol", { staticClass: "breadcrumb mt-3 shadow" }, [
-      _c("li", { staticClass: "breadcrumb-item" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Dashboard")])
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "breadcrumb-item active" }, [
-        _vm._v("All Category")
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -53521,153 +53545,157 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "card shadow" }, [
-      _c(
-        "div",
-        {
-          staticClass: "card-header text-primary",
-          staticStyle: { "font-size": "20px", "font-weight": "700" }
-        },
-        [
-          _c("i", { staticClass: "fas fa-chart-area" }),
-          _vm._v("\n            All Employee\n            "),
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-primary shadow",
-              attrs: { to: "/store-employee", id: "add_new" }
-            },
-            [_vm._v(" Add Employee")]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body pt-0" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "table-responsive" }, [
+    _c(
+      "div",
+      { staticClass: "card shadow", staticStyle: { "margin-bottom": "2rem" } },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "card-header text-primary",
+            staticStyle: { "font-size": "20px", "font-weight": "700" }
+          },
+          [
+            _c("i", { staticClass: "fas fa-chart-area" }),
+            _vm._v("\n            All Employee\n            "),
             _c(
-              "div",
+              "router-link",
               {
-                staticClass: "input-group mb-3",
-                staticStyle: { width: "400px" }
+                staticClass: "btn btn-primary shadow",
+                attrs: { to: "/store-employee", id: "add_new" }
               },
-              [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.searchTerm,
-                      expression: "searchTerm"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    placeholder: "Search Employee Name",
-                    "aria-label": "Username",
-                    "aria-describedby": "basic-addon1"
-                  },
-                  domProps: { value: _vm.searchTerm },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.searchTerm = $event.target.value
-                    }
-                  }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "table",
-              {
-                staticClass: "table table-striped table-hover",
-                staticStyle: { "font-size": "2vh" },
-                attrs: { id: "", width: "100%", cellspacing: "0" }
-              },
-              [
-                _vm._m(2),
-                _vm._v(" "),
-                _c(
-                  "tbody",
-                  _vm._l(_vm.filtersearch, function(employee) {
-                    return _c("tr", { key: employee.id }, [
-                      _c("td", [_vm._v(_vm._s(employee.name))]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c("img", {
-                          attrs: { src: employee.photo, id: "em_photo" }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(employee.phone))]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _vm._v(
-                          _vm._s(Number(employee.salary).toLocaleString()) +
-                            " IDR"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(employee.joining_date))]),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "btn btn-sm btn-warning shadow",
-                              attrs: {
-                                to: {
-                                  name: "edit-employee",
-                                  params: { id: employee.id }
-                                },
-                                "data-toggle": "tooltip",
-                                "data-placement": "top",
-                                title: "Edit"
-                              }
-                            },
-                            [_c("i", { staticClass: "far fa-edit" })]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "btn btn-sm btn-danger text-white shadow",
-                              attrs: {
-                                "data-toggle": "tooltip",
-                                "data-placement": "top",
-                                title: "Delete"
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.deleteEmployee(employee.id)
-                                }
-                              }
-                            },
-                            [_c("i", { staticClass: "far fa-trash-alt" })]
-                          )
-                        ],
-                        1
-                      )
-                    ])
-                  }),
-                  0
-                )
-              ]
+              [_vm._v(" Add Employee")]
             )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body pt-0" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "table-responsive" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "input-group mb-3",
+                  staticStyle: { width: "400px" }
+                },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.searchTerm,
+                        expression: "searchTerm"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      placeholder: "Search Employee Name",
+                      "aria-label": "Username",
+                      "aria-describedby": "basic-addon1"
+                    },
+                    domProps: { value: _vm.searchTerm },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.searchTerm = $event.target.value
+                      }
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
+                  attrs: { id: "", width: "100%", cellspacing: "0" }
+                },
+                [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.filtersearch, function(employee) {
+                      return _c("tr", { key: employee.id }, [
+                        _c("td", [_vm._v(_vm._s(employee.name))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("img", {
+                            attrs: { src: employee.photo, id: "em_photo" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(employee.phone))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(Number(employee.salary).toLocaleString()) +
+                              " IDR"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(employee.joining_date))]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "btn btn-sm btn-warning shadow",
+                                attrs: {
+                                  to: {
+                                    name: "edit-employee",
+                                    params: { id: employee.id }
+                                  },
+                                  "data-toggle": "tooltip",
+                                  "data-placement": "top",
+                                  title: "Edit"
+                                }
+                              },
+                              [_c("i", { staticClass: "far fa-edit" })]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "btn btn-sm btn-danger text-white shadow",
+                                attrs: {
+                                  "data-toggle": "tooltip",
+                                  "data-placement": "top",
+                                  title: "Delete"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.deleteEmployee(employee.id)
+                                  }
+                                }
+                              },
+                              [_c("i", { staticClass: "far fa-trash-alt" })]
+                            )
+                          ],
+                          1
+                        )
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
           ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -54323,9 +54351,14 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "mt-4", staticStyle: { "font-weight": "900" } }, [
-      _vm._v("Dashboard")
-    ]),
+    _c(
+      "h1",
+      {
+        staticClass: "mt-4",
+        staticStyle: { "font-weight": "900", color: "white" }
+      },
+      [_vm._v("DASHBOARD")]
+    ),
     _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
@@ -55736,92 +55769,96 @@ var render = function() {
                     "div",
                     { staticClass: "row" },
                     _vm._l(_vm.filtersearch, function(product) {
-                      return _c(
-                        "div",
-                        {
-                          key: product.id,
-                          staticClass: "col-lg-3 col-md-4 col-sm-6 col-6"
-                        },
-                        [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-sm",
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.AddToCart(product.id)
-                                }
+                      return _c("div", { key: product.id }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-sm",
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.AddToCart(product.id)
                               }
-                            },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "card shadow",
-                                  staticStyle: { width: "9rem", height: "100%" }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    staticStyle: { width: "100%" },
-                                    attrs: { src: product.image }
-                                  }),
+                            }
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "card shadow",
+                                staticStyle: { width: "9.85rem" }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "card-img-top",
+                                  staticStyle: { width: "100%" },
+                                  attrs: { src: product.image }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "card-body" }, [
+                                  _c("small", { staticClass: "card-title" }, [
+                                    _vm._v(_vm._s(product.product_name))
+                                  ]),
+                                  _c("br"),
                                   _vm._v(" "),
-                                  _c("div", { staticClass: "card-body" }, [
-                                    _c("small", { staticClass: "card-title" }, [
-                                      _vm._v(_vm._s(product.product_name))
-                                    ]),
-                                    _c("br"),
-                                    _vm._v(" "),
-                                    product.product_quantity >= 1
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass: "badge badge-success",
-                                            staticStyle: { padding: "5px" }
-                                          },
-                                          [
-                                            _vm._v(
-                                              " Availble (" +
-                                                _vm._s(
-                                                  Number(
-                                                    product.product_quantity
-                                                  ).toLocaleString()
-                                                ) +
-                                                ") "
-                                            )
-                                          ]
-                                        )
-                                      : _c(
-                                          "span",
-                                          { staticClass: "badge badge-danger" },
-                                          [_vm._v("Stock Out")]
-                                        ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      {
-                                        staticClass:
-                                          "text-primary d-block m-0 p-0 small"
-                                      },
-                                      [
-                                        _vm._v(
-                                          _vm._s(
-                                            Number(
-                                              product.selling_price
-                                            ).toLocaleString()
-                                          ) + " IDR"
-                                        )
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
+                                  product.product_quantity >= 1
+                                    ? _c(
+                                        "span",
+                                        {
+                                          staticClass: "badge badge-success",
+                                          staticStyle: {
+                                            padding: "5px",
+                                            "margin-bottom": "10px",
+                                            "margin-top": "10px"
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            " Availble (" +
+                                              _vm._s(
+                                                Number(
+                                                  product.product_quantity
+                                                ).toLocaleString()
+                                              ) +
+                                              ") "
+                                          )
+                                        ]
+                                      )
+                                    : _c(
+                                        "span",
+                                        {
+                                          staticClass: "badge badge-danger",
+                                          staticStyle: {
+                                            padding: "5px",
+                                            "margin-bottom": "10px",
+                                            "margin-top": "10px"
+                                          }
+                                        },
+                                        [_vm._v("Stock Out")]
+                                      ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "text-primary d-block m-0 p-0 small"
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          Number(
+                                            product.selling_price
+                                          ).toLocaleString()
+                                        ) + " IDR"
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ]
+                            )
+                          ]
+                        )
+                      ])
                     }),
                     0
                   )
@@ -55866,87 +55903,78 @@ var render = function() {
                     "div",
                     { staticClass: "row" },
                     _vm._l(_vm.getfiltersearch, function(getproduct) {
-                      return _c(
-                        "div",
-                        {
-                          key: getproduct.id,
-                          staticClass: "col-lg-3 col-md-4 col-sm-6 col-6"
-                        },
-                        [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-sm",
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.AddToCart(getproduct.id)
-                                }
+                      return _c("div", { key: getproduct.id }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-sm",
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.AddToCart(getproduct.id)
                               }
-                            },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "card shadow",
-                                  staticStyle: { width: "9rem", height: "100%" }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    staticStyle: { width: "100%" },
-                                    attrs: { src: getproduct.image }
-                                  }),
+                            }
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "card shadow",
+                                staticStyle: { width: "9rem", height: "100%" }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "card-img-top",
+                                  staticStyle: { width: "100%" },
+                                  attrs: { src: getproduct.image }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "card-body" }, [
+                                  _c("small", { staticClass: "card-title" }, [
+                                    _vm._v(_vm._s(getproduct.product_name))
+                                  ]),
                                   _vm._v(" "),
-                                  _c("div", { staticClass: "card-body" }, [
-                                    _c("small", { staticClass: "card-title" }, [
-                                      _vm._v(_vm._s(getproduct.product_name))
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("br"),
-                                    _vm._v(" "),
-                                    getproduct.product_quantity >= 1
-                                      ? _c(
-                                          "span",
-                                          {
-                                            staticClass: "badge badge-success"
-                                          },
-                                          [
-                                            _vm._v(
-                                              " Availble (" +
-                                                _vm._s(
-                                                  getproduct.product_quantity
-                                                ) +
-                                                ") "
-                                            )
-                                          ]
-                                        )
-                                      : _c(
-                                          "span",
-                                          { staticClass: "badge badge-danger" },
-                                          [_vm._v("Stock Out")]
-                                        ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      {
-                                        staticClass:
-                                          "text-primary d-block m-0 p-0 small"
-                                      },
-                                      [
-                                        _vm._v(
-                                          " BDT: " +
-                                            _vm._s(getproduct.selling_price)
-                                        )
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
+                                  _c("br"),
+                                  _vm._v(" "),
+                                  getproduct.product_quantity >= 1
+                                    ? _c(
+                                        "span",
+                                        { staticClass: "badge badge-success" },
+                                        [
+                                          _vm._v(
+                                            " Availble (" +
+                                              _vm._s(
+                                                getproduct.product_quantity
+                                              ) +
+                                              ") "
+                                          )
+                                        ]
+                                      )
+                                    : _c(
+                                        "span",
+                                        { staticClass: "badge badge-danger" },
+                                        [_vm._v("Stock Out")]
+                                      ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "text-primary d-block m-0 p-0 small"
+                                    },
+                                    [
+                                      _vm._v(
+                                        " BDT: " +
+                                          _vm._s(getproduct.selling_price)
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ]
+                            )
+                          ]
+                        )
+                      ])
                     }),
                     0
                   )
@@ -60421,11 +60449,11 @@ var staticRenderFns = [
           staticStyle: { "background-color": "#7E2E95" }
         },
         [
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
+          _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Name")]),
           _vm._v(" "),
           _c("th", { attrs: { scope: "col" } }, [_vm._v("Photo")]),
           _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Phone")]),
+          _c("th", { staticStyle: { width: "15%" } }, [_vm._v("Phone")]),
           _vm._v(" "),
           _c("th", { attrs: { scope: "col" } }, [_vm._v("Vendor")]),
           _vm._v(" "),
@@ -75688,10 +75716,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_Notification__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./helpers/Notification */ "./resources/js/helpers/Notification.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_5__);
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue'); //or bellow line
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
 
 
- //--these nxt 3_lines are newly added as we installed vue-router
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); //----route imported-------
@@ -75699,16 +75726,13 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
  //---import User Class----
 
 
-window.User = _helpers_User__WEBPACK_IMPORTED_MODULE_3__["default"]; //--for 'globally' use
-//----import Notification Class-------
+window.User = _helpers_User__WEBPACK_IMPORTED_MODULE_3__["default"]; //----import Notification Class-------
 
- //--for 'globally' use
 
 window.Notification = _helpers_Notification__WEBPACK_IMPORTED_MODULE_4__["default"]; //----start-----Sweetalert2------
 
 
-window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a; //--for 'globally' use
-
+window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a;
 var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.mixin({
   toast: true,
   position: 'top-end',
@@ -75720,22 +75744,17 @@ var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.mixin({
     toast.addEventListener('mouseleave', sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.resumeTimer);
   }
 });
-window.Toast = Toast; //--for 'globally' use
-//----End-----Sweetalert2------------//------
+window.Toast = Toast; //----End-----Sweetalert2------------//------
 //------Reload-----
 
-window.Reload = new vue__WEBPACK_IMPORTED_MODULE_0___default.a(); //--for reload() method /to instantly reload page
-
+window.Reload = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  //------------
   routes: _routes__WEBPACK_IMPORTED_MODULE_2__["routes"],
-  mode: 'history' //To remove '#' from URL
-
+  mode: 'history'
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
-  router: router //-----------
-
+  router: router
 });
 
 /***/ }),
@@ -78890,13 +78909,11 @@ var User = /*#__PURE__*/function () {
   _createClass(User, [{
     key: "responseAfterLogin",
     value: function responseAfterLogin(response) {
-      //(token + other's_info) situated in 'data' property
       var access_token = response.data.access_token;
       var username = response.data.name;
 
       if (_Token__WEBPACK_IMPORTED_MODULE_1__["default"].isValid(access_token)) {
-        //called 'Token' class er isValid method
-        _AppStorage__WEBPACK_IMPORTED_MODULE_0__["default"].store(access_token, username); //called 'AppStorage' class er store()
+        _AppStorage__WEBPACK_IMPORTED_MODULE_0__["default"].store(access_token, username);
       }
     }
   }, {
@@ -78905,7 +78922,6 @@ var User = /*#__PURE__*/function () {
       var storeToken = localStorage.getItem('token');
 
       if (storeToken) {
-        //called 'Token' class er isValid()
         return _Token__WEBPACK_IMPORTED_MODULE_1__["default"].isValid(storeToken) ? true : false;
       }
 
@@ -78915,12 +78931,7 @@ var User = /*#__PURE__*/function () {
     key: "loggedIn",
     value: function loggedIn() {
       return this.hasToken();
-    } // loggout(){
-    //     AppStorage.clear()      //called 'AppStorage' class er clear()
-    //     window.location('/')    //--file move hocche But Page_reload nichhe,
-    //     this.$router.push('/')   //OR--file move hocche & Page_reload Nibe NA,
-    // }
-
+    }
   }, {
     key: "name",
     value: function name() {
@@ -78932,9 +78943,8 @@ var User = /*#__PURE__*/function () {
     key: "id",
     value: function id() {
       if (this.loggedIn()) {
-        //called 'Token' class er payload()
         var payload = _Token__WEBPACK_IMPORTED_MODULE_1__["default"].payload(localStorage.getItem('token'));
-        return payload.sub; //--here,'sub' indicates to 'user's id'[default]
+        return payload.sub;
       }
 
       return false;
@@ -79043,13 +79053,11 @@ var routes = [//-------JWT/auth_routes--------
   path: '/',
   component: Login,
   name: '/'
-}, //--amra ekane (name:'blah') ta use korteo pari,Nao pari,Not mendatory
-{
+}, {
   path: '/register',
   component: Register,
   name: 'register'
-}, //--JWT-auth
-{
+}, {
   path: '/forget',
   component: forgetPass,
   name: 'forget'
@@ -79062,8 +79070,7 @@ var routes = [//-------JWT/auth_routes--------
   path: '/home',
   component: home,
   name: 'home'
-}, //--home_route
-//-------Employee_routes-------
+}, //-------Employee_routes-------
 {
   path: '/store-employee',
   component: storeEmployee,
@@ -79072,13 +79079,11 @@ var routes = [//-------JWT/auth_routes--------
   path: '/employee',
   component: employee,
   name: 'employee'
-}, //route'r sate 'path' working,'name' not working
-{
+}, {
   path: '/edit-employee/:id',
   component: editEmployee,
   name: 'edit-employee'
-}, //-------------------
-//-------Supplier_routes-----------
+}, //-------Supplier_routes-----------
 {
   path: '/store-supplier',
   component: storeSupplier,

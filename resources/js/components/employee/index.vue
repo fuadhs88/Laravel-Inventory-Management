@@ -8,7 +8,7 @@
             <li class="breadcrumb-item active">All Employee</li>
         </ol>
         <!-- Icon Cards-->
-        <div class="card shadow">  <!-----f----->
+        <div class="card shadow" style="margin-bottom:2rem">  <!-----f----->
             <div class="card-header text-primary" style="font-size: 20px; font-weight:700;">
                 <i class="fas fa-chart-area"></i>
                 All Employee
