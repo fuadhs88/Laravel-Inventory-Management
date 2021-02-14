@@ -8,7 +8,7 @@
             <li class="breadcrumb-item active">All Supplier</li>
         </ol>
         <!-- Icon Cards-->
-        <div class="shadow" style="margin-bottom:2rem">
+        <div class="card shadow" style="margin-bottom:2rem">
             <div class="card-header text-primary" style="font-size: 20px; font-weight:700;">
                 <i class="fas fa-chart-area"></i>
                 All Supplier
@@ -22,7 +22,7 @@
                             <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Mobile Phone Number" aria-label="Username" aria-describedby="basic-addon1">
                         </div>     <!-----f----->
                         <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by phone"><br> <br> -->
-                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0">
+                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0" style="font-size:2vh">
 
                             <thead class="align-middle shadow">
                             <tr class="text-white" style="background-color:#7E2E95;">

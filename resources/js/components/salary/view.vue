@@ -8,7 +8,7 @@
           <li class="breadcrumb-item active">All Employee / View</li>
         </ol>
         <!-- Icon Cards-->
-       <div class="shadow" style="margin-bottom:2rem">
+       <div class="card shadow" style="margin-bottom:2rem">
           <div class="card-header text-primary" style="font-size: 20px; font-weight:700;">
             <i class="fas fa-chart-area"></i>
             Employee Salary Deatils
@@ -21,7 +21,7 @@
                   <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Employee Name" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by name"> <br><br> -->
-                <table class="table table-striped table-hover" id="" width="100%" cellspacing="0">
+                <table class="table table-striped table-hover" id="" width="100%" cellspacing="0" style="font-size:2vh">
                   <thead class="shadow">
                     <tr class="text-white" style="background-color:#7E2E95;">
                       <th>Name</th>
@@ -36,7 +36,7 @@
                     <tr v-for="salary in filtersearch" :key="salary.id">
                       <td>{{ salary.name }}</td>
                       <td>{{ salary.salary_month }}</td>
-                      <td>Rp. {{ Number(salary.amount).toLocaleString() }}</td>
+                      <td>{{ Number(salary.amount).toLocaleString() }} IDR</td>
                        <td>{{ salary.salary_date }}</td>
                       <td>
                         <router-link :to="{name: 'edit-salary', params:{id: salary.id} }" class="btn btn-sm btn-info shadow">Edit Salary</router-link>

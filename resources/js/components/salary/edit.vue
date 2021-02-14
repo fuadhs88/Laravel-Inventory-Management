@@ -22,14 +22,14 @@
 	               <div class="col-md-6">
 	                <div class="form-label-group">
                       <label for="firstName">Full Name</label>
-	                  <input type="text" v-model="form.name" class="form-control" required>
+	                  <input type="text" disabled v-model="form.name" class="form-control" required>
 	                  <small class="text-danger" v-if="errors.name">{{ errors.name[0] }}</small>
 	                </div>
 	               </div>
 	               <div class="col-md-6">
 	                <div class="form-label-group">
                       <label for="lastName">Email Address</label>
-	                  <input type="text" v-model="form.email" class="form-control" >
+	                  <input type="text" disabled v-model="form.email" class="form-control" >
 	                  <small class="text-danger" v-if="errors.email">{{ errors.email[0] }}</small>
 	                </div>
 	               </div>

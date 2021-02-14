@@ -9,7 +9,7 @@
 <div class="row">
     <div class="col-xl-3 col-md-6">
         <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(45deg,#30496B,#30B8D2)">
-            <div class="card-body">Rp. {{ Number(todaysell).toLocaleString() }}</div>
+            <div class="card-body">{{ Number(todaysell).toLocaleString() }} IDR</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class=" text-white stretched-link" href="#">Today Sell</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
@@ -18,7 +18,7 @@
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(-45deg,#95FD48,#19E9A6)">
-            <div class="card-body">Rp. {{ Number(income).toLocaleString() }}</div>
+            <div class="card-body">{{ Number(income).toLocaleString() }} IDR</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class=" text-white stretched-link" href="#">Today Income</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
@@ -27,7 +27,7 @@
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(-45deg,#DA1FF2,#4C15D0)">
-            <div class="card-body">Rp. {{ Number(due).toLocaleString() }}</div>
+            <div class="card-body">{{ Number(due).toLocaleString() }} IDR</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class=" text-white stretched-link" href="#">Today Due</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
@@ -36,7 +36,7 @@
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(45deg,#FB7140,#FB9951)">
-            <div class="card-body">Rp. {{ Number(expense).toLocaleString() }}</div>
+            <div class="card-body">{{ Number(expense).toLocaleString() }} IDR</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class=" text-white stretched-link" href="#">Today Expense</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
@@ -51,12 +51,12 @@
         <div class="card shadow">
             <div class="card-header text-primary font-weight-bold">
                 <i class="fas fa-chart-area mr-1"></i>
-                Stock Out Products
+                Products Stock
             </div>
             <div class="card-body">
                 <div class="card-body pt-0">
                     <div class="table-responsive">
-                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0">
+                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0" style="font-size:2vh">
                             <thead class="shadow">
                                 <tr class="text-white" style="background-color:#572478">
                                     <th>Name</th>

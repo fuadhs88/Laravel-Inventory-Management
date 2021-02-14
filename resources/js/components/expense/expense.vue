@@ -22,7 +22,7 @@
                   <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Date" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by date"><br><br> -->
-                <table class="table table-striped table-hover" width="100%" cellspacing="0">
+                <table class="table table-striped table-hover" width="100%" cellspacing="0" style="font-size:2vh">
 
                   <thead class="shadow">
                     <tr class="text-white" style="background-color:#7E2E95;">
@@ -36,7 +36,7 @@
                   <tbody>
                     <tr v-for="expense in filtersearch" :key="expense.id">
                       <td>{{ expense.details }}</td>
-                      <td>Rp. {{ Number(expense.amount).toLocaleString() }}</td>
+                      <td>{{ Number(expense.amount).toLocaleString() }} IDR</td>
                       <td>{{ expense.expense_date }}</td>
                       <td>
                         <router-link :to="{name: 'edit-expense', params:{id: expense.id} }" class="btn btn-sm btn-warning shadow" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit"></i></router-link>

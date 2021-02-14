@@ -22,7 +22,7 @@
                             <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Employee Name" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px" placeholder="Search Employee Name"><br> <br>    ---f--- -->
-                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0">  <!-----f----->
+                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0" style="font-size:2vh">  <!-----f----->
 
                             <thead class="shadow">
                             <tr class="text-white" style="background-color:#7E2E95"> <!-----f----->
@@ -40,7 +40,7 @@
                                 <td>{{ employee.name }}</td>
                                 <td><img :src="employee.photo" id="em_photo"></td>   <!--bind(:) korle R {{}} lage na-->
                                 <td>{{ employee.phone }}</td>
-                                <td>Rp. {{ Number(employee.salary).toLocaleString() }}</td>
+                                <td>{{ Number(employee.salary).toLocaleString() }} IDR</td>
                                 <td>{{ employee.joining_date }}</td>
                                 <td>
                                     <router-link :to="{name: 'edit-employee', params:{id: employee.id} }" class="btn btn-sm btn-warning shadow" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit"></i></router-link>    <!----it will dynamic thats why applied bind(:to)---->

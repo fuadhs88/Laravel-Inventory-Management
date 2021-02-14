@@ -21,7 +21,7 @@
                   <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Order Name" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by Name"><br><br> -->
-                <table class="table table-striped table-hover" id="" width="100%" cellspacing="0">
+                <table class="table table-striped table-hover" id="" width="100%" cellspacing="0" style="font-size:2vh">
 
                   <thead class="shadow">
                     <tr class="text-white" style="background-color:#7E2E95;">
@@ -37,9 +37,9 @@
                   <tbody>
                     <tr v-for="order in filtersearch" :key="order.id">
                       <td>{{ order.name }}</td>
-                      <td>{{ Number(order.total).toLocaleString() }}</td>
-                      <td>{{ Number(order.pay).toLocaleString() }}</td>
-                      <td>{{ Number(order.due).toLocaleString() }}</td>
+                      <td>{{ Number(order.total).toLocaleString() }} IDR</td>
+                      <td>{{ Number(order.pay).toLocaleString() }} IDR</td>
+                      <td>{{ Number(order.due).toLocaleString() }} IDR</td>
                       <td>{{ order.payby }}</td>
                       <td>
                         <router-link :to="{name: 'view-order', params:{id: order.id} }" class="btn btn-sm btn-info shadow">View</router-link>

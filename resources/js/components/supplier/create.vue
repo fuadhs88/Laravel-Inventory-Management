@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <img :src="form.photo" style="height:100px; width: 100px;">
+                                        <img :src="form.photo" style="height:150px; width: 150px;">
                                     </div>
                                 </div>
                             </div>

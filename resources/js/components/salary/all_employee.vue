@@ -8,7 +8,7 @@
           <li class="breadcrumb-item active">All Employee / Salary</li>
         </ol>
         <!-- Icon Cards-->
-       <div class="shadow" style="margin-bottom:2rem">
+       <div class="card shadow" style="margin-bottom:2rem">
           <div class="card-header text-primary" style="font-size: 20px; font-weight:700;">
             <i class="fas fa-chart-area"></i>
             Employee Salary Pay
@@ -21,7 +21,7 @@
                   <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Employee Name" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by name"><br><br> -->
-                <table class="table table-striped table-hover" id="" width="100%" cellspacing="0">
+                <table class="table table-striped table-hover" id="" width="100%" cellspacing="0" style="font-size:2vh">
 
                   <thead class="shadow">
                     <tr class="text-white shadow" style="background-color:#7E2E95;">
@@ -38,7 +38,7 @@
                       <td>{{ employee.name }}</td>
                       <td><img :src="employee.photo" id="em_photo"></td>
                       <td>{{ employee.phone }}</td>
-                      <td>{{ Number(employee.salary).toLocaleString() }}</td>
+                      <td>{{ Number(employee.salary).toLocaleString() }} IDR</td>
                       <td>
                         <router-link :to="{name: 'pay-salary', params:{id: employee.id} }" class="btn btn-sm btn-info shadow">Pay Salary</router-link>
                       </td>

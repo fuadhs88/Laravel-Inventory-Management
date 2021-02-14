@@ -8,7 +8,7 @@
             <li class="breadcrumb-item active">Stock</li>
         </ol>
         <!-- Icon Cards-->
-        <div class="shadow" style="margin-bottom:2rem">
+        <div class="card shadow" style="margin-bottom:2rem">
             <div class="card-header text-primary" style="font-size: 20px; font-weight:700;">
                 <i class="fas fa-chart-area"></i>
                 Stock
@@ -21,7 +21,7 @@
                             <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Product Name" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px" placeholder="Search by name"><br> <br> -->
-                        <table class="table table-striped table-hover" width="100%" cellspacing="0">
+                        <table class="table table-striped table-hover" width="100%" cellspacing="0" style="font-size:2vh">
                             <thead class="shadow">
                             <tr class="text-white" style="background-color:#7E2E95;">
                                 <th>Name</th>
@@ -29,7 +29,7 @@
                                 <th>Photo</th>
                                 <th>Category</th>
                                 <th>Status</th>
-                                <th>Available Product</th>
+                                <th>Qty</th>
                                 <th>Action</th>
                             </tr>
                             </thead>

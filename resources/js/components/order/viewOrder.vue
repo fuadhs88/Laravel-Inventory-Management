@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-6">
-                            <table class="table border" id="" width="100%" cellspacing="0">
+                            <table class="table border" id="" width="100%" cellspacing="0" style="font-size:2vh">
                                 <tr>
                                     <th colspan="3" class="bg-info text-white shadow">Customer Details</th>
                                 </tr>
@@ -50,31 +50,31 @@
                             </table>
                         </div>
                         <div class="col-lg-6 col-md-6 col-6">
-                            <table class="table border" id="" width="100%" cellspacing="0">
+                            <table class="table border" id="" width="100%" cellspacing="0" style="font-size:2vh">
                                 <tr>
                                     <td width="30%"><b>Sub-Total</b></td>
                                     <td width="5%">:</td>
-                                    <td width="65%">Rp. {{ Number(orders.sub_total).toLocaleString() }}</td>
+                                    <td width="65%">{{ Number(orders.sub_total).toLocaleString() }} IDR</td>
                                 </tr>
                                 <tr>
                                     <td>VAT</td>
                                     <td>:</td>
-                                    <td>Rp. {{ Number(orders.vat).toLocaleString() }}</td>
+                                    <td>{{ Number(orders.vat).toLocaleString() }} IDR</td>
                                 </tr>
                                 <tr>
                                     <td>Total</td>
                                     <td>:</td>
-                                    <td>Rp. {{ Number(orders.total).toLocaleString() }}</td>
+                                    <td>{{ Number(orders.total).toLocaleString() }} IDR</td>
                                 </tr>
                                 <tr>
                                     <td>Pay</td>
                                     <td>:</td>
-                                    <td>Rp. {{ Number(orders.pay).toLocaleString() }}</td>
+                                    <td>{{ Number(orders.pay).toLocaleString() }} IDR</td>
                                 </tr>
                                 <tr>
                                     <td>Due</td>
                                     <td>:</td>
-                                    <td>Rp. {{ Number(orders.due).toLocaleString() }}</td>
+                                    <td>{{ Number(orders.due).toLocaleString() }} IDR</td>
                                 </tr>
                                 <tr>
                                     <td>Payment Method</td>
@@ -99,9 +99,12 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <label class="d-inline">Search : </label>
-                        <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by name"><br><br>
-                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0">
+                        <div class="input-group mb-3" style="width:400px;">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                            <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Product Name" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by name"><br><br> -->
+                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0" style="font-size:2vh">
 
                             <thead class="shadow">
                                 <tr class="text-white" style="background-color:#7E2E95;">
@@ -110,7 +113,7 @@
                                     <th>Image</th>
                                     <th>Qty</th>
                                     <th>Unit Price</th>
-                                    <th>Total</th>
+                                    <th>Sub-Total</th>
                                 </tr>
                             </thead>
 
@@ -119,7 +122,7 @@
                                     <td>{{ detail.product_name}}</td>
                                     <td>{{ detail.product_code}}</td>
                                     <td><img :src="'/'+detail.image" id="em_photo"></td>
-                                    <td>{{ Number(detail.pro_quantity).toLocaleString() }} IDR</td>
+                                    <td>{{ Number(detail.pro_quantity).toLocaleString() }}</td>
                                     <td>{{ Number(detail.product_price).toLocaleString() }} IDR</td>
                                     <td>{{ Number(detail.sub_total).toLocaleString() }} IDR</td>
                                 </tr>

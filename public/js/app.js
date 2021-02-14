@@ -4437,6 +4437,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -4479,7 +4482,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -51791,6 +51793,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
@@ -52140,7 +52143,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("img", {
-                        staticStyle: { height: "40px", width: "40px" },
+                        staticStyle: { height: "150px", width: "150px" },
                         attrs: { src: _vm.form.photo }
                       })
                     ])
@@ -52545,6 +52548,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
@@ -53057,7 +53061,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("img", {
-                      staticStyle: { height: "40px", width: "40px" },
+                      staticStyle: { height: "150px", width: "150px" },
                       attrs: { src: _vm.form.photo }
                     })
                   ])
@@ -53584,6 +53588,7 @@ var render = function() {
               "table",
               {
                 staticClass: "table table-striped table-hover",
+                staticStyle: { "font-size": "2vh" },
                 attrs: { id: "", width: "100%", cellspacing: "0" }
               },
               [
@@ -53605,8 +53610,8 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [
                         _vm._v(
-                          "Rp. " +
-                            _vm._s(Number(employee.salary).toLocaleString())
+                          _vm._s(Number(employee.salary).toLocaleString()) +
+                            " IDR"
                         )
                       ]),
                       _vm._v(" "),
@@ -54168,6 +54173,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { width: "100%", cellspacing: "0" }
                 },
                 [
@@ -54181,8 +54187,8 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            "Rp. " +
-                              _vm._s(Number(expense.amount).toLocaleString())
+                            _vm._s(Number(expense.amount).toLocaleString()) +
+                              " IDR"
                           )
                         ]),
                         _vm._v(" "),
@@ -54336,7 +54342,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "card-body" }, [
-              _vm._v("Rp. " + _vm._s(Number(_vm.todaysell).toLocaleString()))
+              _vm._v(_vm._s(Number(_vm.todaysell).toLocaleString()) + " IDR")
             ]),
             _vm._v(" "),
             _vm._m(1)
@@ -54356,7 +54362,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "card-body" }, [
-              _vm._v("Rp. " + _vm._s(Number(_vm.income).toLocaleString()))
+              _vm._v(_vm._s(Number(_vm.income).toLocaleString()) + " IDR")
             ]),
             _vm._v(" "),
             _vm._m(2)
@@ -54376,7 +54382,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "card-body" }, [
-              _vm._v("Rp. " + _vm._s(Number(_vm.due).toLocaleString()))
+              _vm._v(_vm._s(Number(_vm.due).toLocaleString()) + " IDR")
             ]),
             _vm._v(" "),
             _vm._m(3)
@@ -54396,7 +54402,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "card-body" }, [
-              _vm._v("Rp. " + _vm._s(Number(_vm.expense).toLocaleString()))
+              _vm._v(_vm._s(Number(_vm.expense).toLocaleString()) + " IDR")
             ]),
             _vm._v(" "),
             _vm._m(4)
@@ -54417,6 +54423,7 @@ var render = function() {
                   "table",
                   {
                     staticClass: "table table-striped table-hover",
+                    staticStyle: { "font-size": "2vh" },
                     attrs: { id: "", width: "100%", cellspacing: "0" }
                   },
                   [
@@ -54587,7 +54594,7 @@ var staticRenderFns = [
       { staticClass: "card-header text-primary font-weight-bold" },
       [
         _c("i", { staticClass: "fas fa-chart-area mr-1" }),
-        _vm._v("\n                Stock Out Products\n            ")
+        _vm._v("\n                Products Stock\n            ")
       ]
     )
   },
@@ -54692,6 +54699,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
@@ -54704,15 +54712,22 @@ var render = function() {
                         _c("td", [_vm._v(_vm._s(order.name))]),
                         _vm._v(" "),
                         _c("td", [
-                          _vm._v(_vm._s(Number(order.total).toLocaleString()))
+                          _vm._v(
+                            _vm._s(Number(order.total).toLocaleString()) +
+                              " IDR"
+                          )
                         ]),
                         _vm._v(" "),
                         _c("td", [
-                          _vm._v(_vm._s(Number(order.pay).toLocaleString()))
+                          _vm._v(
+                            _vm._s(Number(order.pay).toLocaleString()) + " IDR"
+                          )
                         ]),
                         _vm._v(" "),
                         _c("td", [
-                          _vm._v(_vm._s(Number(order.due).toLocaleString()))
+                          _vm._v(
+                            _vm._s(Number(order.due).toLocaleString()) + " IDR"
+                          )
                         ]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(order.payby))]),
@@ -55255,6 +55270,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table border",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
@@ -55312,6 +55328,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table border",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
@@ -55322,8 +55339,8 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", { attrs: { width: "65%" } }, [
                       _vm._v(
-                        "Rp. " +
-                          _vm._s(Number(_vm.orders.sub_total).toLocaleString())
+                        _vm._s(Number(_vm.orders.sub_total).toLocaleString()) +
+                          " IDR"
                       )
                     ])
                   ]),
@@ -55335,7 +55352,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
-                        "Rp. " + _vm._s(Number(_vm.orders.vat).toLocaleString())
+                        _vm._s(Number(_vm.orders.vat).toLocaleString()) + " IDR"
                       )
                     ])
                   ]),
@@ -55347,8 +55364,8 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
-                        "Rp. " +
-                          _vm._s(Number(_vm.orders.total).toLocaleString())
+                        _vm._s(Number(_vm.orders.total).toLocaleString()) +
+                          " IDR"
                       )
                     ])
                   ]),
@@ -55360,7 +55377,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
-                        "Rp. " + _vm._s(Number(_vm.orders.pay).toLocaleString())
+                        _vm._s(Number(_vm.orders.pay).toLocaleString()) + " IDR"
                       )
                     ])
                   ]),
@@ -55372,7 +55389,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
-                        "Rp. " + _vm._s(Number(_vm.orders.due).toLocaleString())
+                        _vm._s(Number(_vm.orders.due).toLocaleString()) + " IDR"
                       )
                     ])
                   ]),
@@ -55407,41 +55424,53 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c("div", { staticClass: "table-responsive" }, [
-              _c("label", { staticClass: "d-inline" }, [_vm._v("Search : ")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.searchTerm,
-                    expression: "searchTerm"
-                  }
-                ],
-                staticClass: "form-control d-inline",
-                staticStyle: { width: "200px" },
-                attrs: { type: "text", placeholder: "Search by name" },
-                domProps: { value: _vm.searchTerm },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c(
+                "div",
+                {
+                  staticClass: "input-group mb-3",
+                  staticStyle: { width: "400px" }
+                },
+                [
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.searchTerm,
+                        expression: "searchTerm"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      placeholder: "Search Product Name",
+                      "aria-label": "Username",
+                      "aria-describedby": "basic-addon1"
+                    },
+                    domProps: { value: _vm.searchTerm },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.searchTerm = $event.target.value
+                      }
                     }
-                    _vm.searchTerm = $event.target.value
-                  }
-                }
-              }),
-              _c("br"),
-              _c("br"),
+                  })
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
-                  _vm._m(5),
+                  _vm._m(6),
                   _vm._v(" "),
                   _c(
                     "tbody",
@@ -55465,17 +55494,16 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            "Rp. " +
-                              _vm._s(
-                                Number(detail.product_price).toLocaleString()
-                              )
+                            _vm._s(
+                              Number(detail.product_price).toLocaleString()
+                            ) + " IDR"
                           )
                         ]),
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            "Rp. " +
-                              _vm._s(Number(detail.sub_total).toLocaleString())
+                            _vm._s(Number(detail.sub_total).toLocaleString()) +
+                              " IDR"
                           )
                         ])
                       ])
@@ -55566,6 +55594,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "span",
+      { staticClass: "input-group-text", attrs: { id: "basic-addon1" } },
+      [_c("i", { staticClass: "fas fa-search" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", { staticClass: "shadow" }, [
       _c(
         "tr",
@@ -55584,7 +55622,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("th", [_vm._v("Unit Price")]),
           _vm._v(" "),
-          _c("th", [_vm._v("Total")])
+          _c("th", [_vm._v("Sub-Total")])
         ]
       )
     ])
@@ -55769,12 +55807,11 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "Rp. " +
-                                            _vm._s(
-                                              Number(
-                                                product.selling_price
-                                              ).toLocaleString()
-                                            )
+                                          _vm._s(
+                                            Number(
+                                              product.selling_price
+                                            ).toLocaleString()
+                                          ) + " IDR"
                                         )
                                       ]
                                     )
@@ -55987,14 +56024,14 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
-                        "Rp. " +
-                          _vm._s(Number(card.product_price).toLocaleString())
+                        _vm._s(Number(card.product_price).toLocaleString()) +
+                          " IDR"
                       )
                     ]),
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
-                        "Rp. " + _vm._s(Number(card.sub_total).toLocaleString())
+                        _vm._s(Number(card.sub_total).toLocaleString()) + " IDR"
                       )
                     ]),
                     _vm._v(" "),
@@ -57121,7 +57158,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("img", {
-                        staticStyle: { height: "40px", width: "40px" },
+                        staticStyle: { height: "150px", width: "150px" },
                         attrs: { src: _vm.form.image }
                       })
                     ])
@@ -57867,7 +57904,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "shadow", staticStyle: { "margin-bottom": "2rem" } },
+      { staticClass: "card shadow", staticStyle: { "margin-bottom": "2rem" } },
       [
         _c(
           "div",
@@ -57935,6 +57972,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
@@ -57960,19 +57998,17 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            "Rp. " +
-                              _vm._s(
-                                Number(product.buying_price).toLocaleString()
-                              )
+                            _vm._s(
+                              Number(product.buying_price).toLocaleString()
+                            ) + " IDR"
                           )
                         ]),
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            "Rp. " +
-                              _vm._s(
-                                Number(product.selling_price).toLocaleString()
-                              )
+                            _vm._s(
+                              Number(product.selling_price).toLocaleString()
+                            ) + " IDR"
                           )
                         ]),
                         _vm._v(" "),
@@ -58117,7 +58153,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "shadow", staticStyle: { "margin-bottom": "2rem" } },
+      { staticClass: "card shadow", staticStyle: { "margin-bottom": "2rem" } },
       [
         _vm._m(1),
         _vm._v(" "),
@@ -58166,6 +58202,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { width: "100%", cellspacing: "0" }
                 },
                 [
@@ -58304,7 +58341,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("th", [_vm._v("Status")]),
           _vm._v(" "),
-          _c("th", [_vm._v("Available Product")]),
+          _c("th", [_vm._v("Qty")]),
           _vm._v(" "),
           _c("th", [_vm._v("Action")])
         ]
@@ -58338,7 +58375,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "shadow", staticStyle: { "margin-bottom": "2rem" } },
+      { staticClass: "card shadow", staticStyle: { "margin-bottom": "2rem" } },
       [
         _vm._m(1),
         _vm._v(" "),
@@ -58387,6 +58424,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
@@ -58408,7 +58446,8 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            _vm._s(Number(employee.salary).toLocaleString())
+                            _vm._s(Number(employee.salary).toLocaleString()) +
+                              " IDR"
                           )
                         ]),
                         _vm._v(" "),
@@ -58881,7 +58920,7 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "text", required: "" },
+                          attrs: { type: "text", disabled: "", required: "" },
                           domProps: { value: _vm.form.name },
                           on: {
                             input: function($event) {
@@ -58917,7 +58956,7 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "text" },
+                          attrs: { type: "text", disabled: "" },
                           domProps: { value: _vm.form.email },
                           on: {
                             input: function($event) {
@@ -59178,7 +59217,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "shadow", staticStyle: { "margin-bottom": "2rem" } },
+      { staticClass: "card shadow", staticStyle: { "margin-bottom": "2rem" } },
       [
         _vm._m(1),
         _vm._v(" "),
@@ -59227,6 +59266,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
@@ -59361,7 +59401,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "shadow", staticStyle: { "margin-bottom": "2rem" } },
+      { staticClass: "card shadow", staticStyle: { "margin-bottom": "2rem" } },
       [
         _vm._m(1),
         _vm._v(" "),
@@ -59410,6 +59450,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [
@@ -59425,8 +59466,8 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            "Rp. " +
-                              _vm._s(Number(salary.amount).toLocaleString())
+                            _vm._s(Number(salary.amount).toLocaleString()) +
+                              " IDR"
                           )
                         ]),
                         _vm._v(" "),
@@ -59829,7 +59870,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "col-md-6" }, [
                         _c("img", {
-                          staticStyle: { height: "100px", width: "100px" },
+                          staticStyle: { height: "150px", width: "150px" },
                           attrs: { src: _vm.form.photo }
                         })
                       ])
@@ -60193,7 +60234,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "shadow", staticStyle: { "margin-bottom": "2rem" } },
+      { staticClass: "card shadow", staticStyle: { "margin-bottom": "2rem" } },
       [
         _c(
           "div",
@@ -60261,6 +60302,7 @@ var render = function() {
                 "table",
                 {
                   staticClass: "table table-striped table-hover",
+                  staticStyle: { "font-size": "2vh" },
                   attrs: { id: "", width: "100%", cellspacing: "0" }
                 },
                 [

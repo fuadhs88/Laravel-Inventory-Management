@@ -8,7 +8,7 @@
             <li class="breadcrumb-item active">All Product</li>
         </ol>
         <!-- Icon Cards-->
-        <div class="shadow" style="margin-bottom:2rem">
+        <div class="card shadow" style="margin-bottom:2rem">
             <div class="card-header text-primary" style="font-size: 20px; font-weight:700;">
                 <i class="fas fa-chart-area"></i>
                 All Product
@@ -22,7 +22,7 @@
                             <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Product Name" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by name"><br><br> -->
-                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0">
+                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0" style="font-size:2vh">
 
                             <thead class="shadow">
                             <tr class="text-white" style="background-color:#7E2E95;">
@@ -44,8 +44,8 @@
                                 <td><img :src="product.image" id="em_photo"></td>
                                 <td>{{ product.category_name }}</td>
                                 <td>{{ product.root }}</td>
-                                <td>Rp. {{ Number(product.buying_price).toLocaleString() }}</td>
-                                <td>Rp. {{ Number(product.selling_price).toLocaleString() }}</td>
+                                <td>{{ Number(product.buying_price).toLocaleString() }} IDR</td>
+                                <td>{{ Number(product.selling_price).toLocaleString() }} IDR</td>
                                 <td>
                                     <router-link :to="{name: 'edit-product', params:{id: product.id} }" class="btn btn-sm btn-warning shadow" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit"></i></router-link>
                                     <a @click="deleteProduct(product.id)" class="btn btn-sm btn-danger text-white shadow" data-toggle="tooltip" data-placement="top" title="Delete"><i class="far fa-trash-alt"></i></a>

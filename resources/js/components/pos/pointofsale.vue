@@ -41,7 +41,7 @@
                                                 <small class="card-title">{{ product.product_name }}</small><br>
                                                 <span class="badge badge-success" style="padding:5px" v-if="product.product_quantity >= 1"> Availble ({{ Number(product.product_quantity).toLocaleString()  }}) </span>
                                                 <span class="badge badge-danger" v-else>Stock Out</span>
-                                                <span class="text-primary d-block m-0 p-0 small">Rp. {{ Number(product.selling_price).toLocaleString()  }}</span>
+                                                <span class="text-primary d-block m-0 p-0 small">{{ Number(product.selling_price).toLocaleString() }} IDR</span>
                                             </div>
                                         </div>
                                     </button>
@@ -105,8 +105,8 @@
                                 <button class="btn btn-sm btn-secondary" v-else disabled=""><i class="fas fa-minus-square"></i></button>  
                                 <!-------------->
                             </td>
-                            <td>Rp. {{ Number(card.product_price).toLocaleString() }}</td>
-                            <td>Rp. {{ Number(card.sub_total).toLocaleString() }}</td>
+                            <td>{{ Number(card.product_price).toLocaleString() }} IDR</td>
+                            <td>{{ Number(card.sub_total).toLocaleString() }} IDR</td>
                             <td><a @click="removeItem(card.id)" class="btn btn-sm btn-danger text-white"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
 
@@ -143,8 +143,7 @@
                         <label>Pay Fee</label>
                         <input type="text" class="form-control" required v-model="pay">
 
-                        <label>Due Fee</label>                              <!---------"due" dynamic kora hoyeche------------>
-                        <!-- <input type="text" class="form-control" required v-model="due"> -->
+                        <label>Due Fee</label>          
                         <input type="text" class="form-control" disabled required :value="((totalall) - pay).toLocaleString()">
                         
                         <label>Payment Method</label>
