@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- Breadcrumbs-->
-        <ol class="breadcrumb mt-3">
+        <ol class="breadcrumb mt-3 shadow">
             <li class="breadcrumb-item">
                 <a href="#">Dashboard</a>
             </li>
@@ -9,8 +9,8 @@
         </ol>
 
         <!-----Order------->
-        <div class="row container">
-            <div class="card col-lg-12 border-primary shadow mb-3">
+        <div class="shadow">
+            <div class="card">
                 <div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">
                     <i class="fas fa-chart-area"></i>
                     Order
@@ -18,24 +18,70 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-6">
-                            <ul class="list-group">
-                                <li class="list-group-item bg-info text-white">Customer Details</li>
-                                <li class="list-group-item">Name: {{ orders.name }}</li>
-                                <li class="list-group-item">Phone: {{ orders.phone }}</li>
-                                <li class="list-group-item">Address: {{ orders.address }}</li>
-                                <li class="list-group-item">Date: {{ orders.order_date }}</li>
-                                <li class="list-group-item">Quantity: {{ orders.qty }}</li>
-                            </ul>
+                            <table class="table border" id="" width="100%" cellspacing="0">
+                                <tr>
+                                    <th colspan="3" class="bg-info text-white shadow">Customer Details</th>
+                                </tr>
+                                <tr>
+                                    <td width="30%">Name</td>
+                                    <td width="5%">:</td>
+                                    <td width="65%">{{ orders.name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Phone</td>
+                                    <td>:</td>
+                                    <td>{{ orders.phone }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>:</td>
+                                    <td>{{ orders.address }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>:</td>
+                                    <td>{{ orders.order_date }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Quantity</td>
+                                    <td>:</td>
+                                    <td>{{ orders.qty }}</td>
+                                </tr>
+                            </table>
                         </div>
                         <div class="col-lg-6 col-md-6 col-6">
-                            <ul class="list-group">
-                                <li class="list-group-item">Sub Total: {{orders.sub_total}}</li>
-                                <li class="list-group-item">Vat: {{ orders.vat }}</li>
-                                <li class="list-group-item">Total: {{ orders.total }}</li>
-                                <li class="list-group-item">Pay: {{ orders.pay }}</li>
-                                <li class="list-group-item">Due: {{ orders.due }}</li>
-                                <li class="list-group-item">Pay Through: {{ orders.payby }}</li>
-                            </ul>
+                            <table class="table border" id="" width="100%" cellspacing="0">
+                                <tr>
+                                    <td width="30%">Sub-Total</td>
+                                    <td width="5%">:</td>
+                                    <td width="65%">{{ orders.sub_total }}</td>
+                                </tr>
+                                <tr>
+                                    <td>VAT</td>
+                                    <td>:</td>
+                                    <td>{{ orders.vat }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>:</td>
+                                    <td>{{ orders.total }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Pay</td>
+                                    <td>:</td>
+                                    <td>{{ orders.pay }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Due</td>
+                                    <td>:</td>
+                                    <td>{{ orders.due }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Payment Method</td>
+                                    <td>:</td>
+                                    <td>{{ orders.payby }}</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -45,8 +91,8 @@
 
 
         <!--------Order Details--------->
-        <div class="row container">
-            <div class="card col-lg-12 border-primary shadow mb-3">
+        <div class="shadow" style="margin-bottom:2rem">
+            <div class="card">
                 <div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">
                     <i class="fas fa-chart-area"></i>
                     Order Details
@@ -55,10 +101,10 @@
                     <div class="table-responsive">
                         <label class="d-inline">Search : </label>
                         <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by name"><br><br>
-                        <table class="table table-bordered table-striped table-hover table-warning border-primary" id="" width="100%" cellspacing="0">
+                        <table class="table table-striped table-hover" id="" width="100%" cellspacing="0">
 
-                            <thead>
-                                <tr class="bg-info text-white">
+                            <thead class="shadow">
+                                <tr class="text-white" style="background-color:#7E2E95;">
                                     <th>Product Name</th>
                                     <th>Code</th>
                                     <th>Image</th>
@@ -85,8 +131,6 @@
                 </div>
             </div>
         </div>
-
-    </div>
 </template>
 
 
