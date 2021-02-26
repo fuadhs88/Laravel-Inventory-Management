@@ -54384,7 +54384,8 @@ var render = function() {
             staticClass: "card text-white mb-4 shadow",
             staticStyle: {
               border: "none",
-              "background-image": "linear-gradient(-45deg,#95FD48,#19E9A6)"
+              "background-image":
+                "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(142,187,49,1) 0%, rgba(0,255,145,1) 100%)"
             }
           },
           [

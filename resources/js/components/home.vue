@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="col-xl-3 col-md-6">
-        <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(-45deg,#95FD48,#19E9A6)">
+        <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(142,187,49,1) 0%, rgba(0,255,145,1) 100%);">
             <div class="card-body">{{ Number(income).toLocaleString() }} IDR</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class=" text-white stretched-link" href="#">Today Income</a>
