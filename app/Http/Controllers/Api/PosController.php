@@ -33,7 +33,7 @@ class PosController extends Controller
         $data['payby']=$request->payby;
         $data['pay']=$request->pay;
         $data['due']=$request->due;
-        $data['order_date']=date('d/m/Y');
+        $data['order_date']=date('Y-m-d');
         $data['order_month']=date('F');
         $data['order_year']=date('Y');
         $order_id=DB::table('orders')->insertGetId($data);  
@@ -61,31 +61,47 @@ class PosController extends Controller
 
 
 //----------------------------------------- Card Dashboard Component
-    public function TodaySell()
+    public function MonthlySell()
     {
-        $date = date('d/m/Y');
-        $sell = DB::table("orders")->where('order_date',$date)->sum('total');
+        $month = date('m');
+        $year = date('Y');
+        $sell = DB::table("orders")
+            ->whereMonth('order_date',$month)
+            ->whereYear('order_date',$year)
+            ->sum('total');
         return response()->json($sell);
     }
 
-    public function TodayIncome()
+    public function MonthlyIncome()
     {
-        $date = date('d/m/Y');
-        $income = DB::table("orders")->where('order_date',$date)->sum('pay');
+        $month = date('m');
+        $year = date('Y');
+        $income = DB::table("orders")
+            ->whereMonth('order_date',$month)
+            ->whereYear('order_date',$year)
+            ->sum('pay');
         return response()->json($income);
     }
 
-    public function TodayDue()
+    public function MonthlyDue()
     {
-        $date = date('d/m/Y');
-        $due = DB::table("orders")->where('order_date',$date)->sum('due');
+        $month = date('m');
+        $year = date('Y');
+        $due = DB::table("orders")
+            ->whereMonth('order_date',$month)
+            ->whereYear('order_date',$year)
+            ->sum('due');
         return response()->json($due);
     }
 
-    public function TodayExpense()
+    public function MonthlyExpense()
     {
-        $date = date('d/m/Y');
-        $expense = DB::table("expenses")->where('expense_date',$date)->sum('amount');
+        $month = date('m');
+        $year = date('Y');
+        $expense = DB::table("orders")
+            ->whereMonth('order_date',$month)
+            ->whereYear('order_date',$year)
+            ->sum('amount');
         return response()->json($expense);
     }
 

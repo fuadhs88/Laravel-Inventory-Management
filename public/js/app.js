@@ -3895,15 +3895,15 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    this.TodaySell();
-    this.TodayIncome();
-    this.TodayDue();
-    this.TodayExpense();
+    this.MonthlySell();
+    this.MonthlyIncome();
+    this.MonthlyDue();
+    this.MonthlyExpense();
     this.Stockout();
   },
   data: function data() {
     return {
-      todaysell: '',
+      monthlysell: '',
       income: '',
       expense: '',
       due: '',
@@ -3911,26 +3911,26 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    TodaySell: function TodaySell() {
+    MonthlySell: function MonthlySell() {
       var _this = this;
 
-      axios.get('/api/today/sell').then(function (_ref) {
+      axios.get('/api/monthly/sell').then(function (_ref) {
         var data = _ref.data;
-        return _this.todaysell = data;
+        return _this.monthlysell = data;
       })["catch"]();
     },
-    TodayIncome: function TodayIncome() {
+    MonthlyIncome: function MonthlyIncome() {
       var _this2 = this;
 
-      axios.get('/api/today/income').then(function (_ref2) {
+      axios.get('/api/monthly/income').then(function (_ref2) {
         var data = _ref2.data;
         return _this2.income = data;
       })["catch"]();
     },
-    TodayDue: function TodayDue() {
+    MonthlyDue: function MonthlyDue() {
       var _this3 = this;
 
-      axios.get('/api/today/due').then(function (_ref3) {
+      axios.get('/api/monthly/due').then(function (_ref3) {
         var data = _ref3.data;
         return _this3.due = data;
       });
@@ -3938,7 +3938,7 @@ __webpack_require__.r(__webpack_exports__);
     TodayExpense: function TodayExpense() {
       var _this4 = this;
 
-      axios.get('/api/today/expense').then(function (_ref4) {
+      MonthlyExpense.get('/api/monthly/expense').then(function (_ref4) {
         var data = _ref4.data;
         return _this4.expense = data;
       });
@@ -54369,7 +54369,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "card-body" }, [
-              _vm._v(_vm._s(Number(_vm.todaysell).toLocaleString()) + " IDR")
+              _vm._v(_vm._s(Number(_vm.monthlysell).toLocaleString()) + " IDR")
             ]),
             _vm._v(" "),
             _vm._m(1)
@@ -54534,7 +54534,7 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: " text-white stretched-link", attrs: { href: "#" } },
-          [_vm._v("Today Sell")]
+          [_vm._v("Monthly Sell")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: " text-white" }, [
