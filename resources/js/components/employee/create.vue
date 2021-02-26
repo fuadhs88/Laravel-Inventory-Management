@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<!-- Breadcrumbs-->
-		<ol class="breadcrumb mt-3 shadow">		<!--------f-------->
+		<ol class="breadcrumb mt-3 shadow">		
 			<li class="breadcrumb-item">
 				<a href="#">Dashboard</a>
 			</li>
@@ -10,15 +10,15 @@
 
 		<!-- Icon Cards-->
 		<div style="margin-bottom:2rem">
-			<div class="card shadow">	    <!--------f------->
-				<div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">  <!------f----->
+			<div class="card shadow">	    
+				<div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">  
 					<i class="fas fa-chart-area"></i>
 					Employee Insert
-					<router-link to="/employee" class="btn btn-primary shadow" id="add_new"> All Employee</router-link>  <!----------->
+					<router-link to="/employee" class="btn btn-primary shadow" id="add_new"> All Employee</router-link>  
 				</div>
 
 				<div class="card-body">
-					<form @submit.prevent="employeeInsert" enctype="multipart/form-data">	<!------------------------>
+					<form @submit.prevent="employeeInsert" enctype="multipart/form-data">	
 						<div class="form-group">
 							<div class="form-row">
 								<div class="col-md-6">
@@ -84,12 +84,12 @@
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-label-group">
-                                        <input type="file" class="btn btn-info" @change="onFileselected">   <!----------------->
+                                        <input type="file" class="btn btn-info" @change="onFileselected">   
                                         <small class="text-danger" v-if="errors.photo">{{ errors.photo[0] }}</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img :src="form.photo" style="height:150px; width: 150px;">	<!------------------>
+                                    <img :src="form.photo" class="img-thumbnail" style="height:150px; width: 150px;">	
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
 					email :'',
 					salary:'',
 					address:'',
-					photo :'',
+					photo :'backend/img/noimage.png',
 					phone:'',
 					nid : '',
 					joining_date:''
@@ -127,24 +127,24 @@
 		},
 
 		methods:{
-			onFileselected(event){        //click korlei ai 'event' er vitor pic er sob details chole asbe
-				//console.log(event)
-				let file=event.target.files[0];      //now,File's(name,size,type) available in variable 'file'
-				if (file.size > 1048770) {           //made condition: file will less than 1MB
+			onFileselected(event){    
+				
+				let file=event.target.files[0];      
+				if (file.size > 1048770) {           
 				    Notification.image_validation()
 				}else{
-                    let reader = new FileReader();     //created new instance
+                    let reader = new FileReader();     
                     reader.onload = event => {
-                        this.form.photo = event.target.result   //storing/taking pic's extention in 'photo'
+                        this.form.photo = event.target.result   
                         console.log(event.target.result);
                     };
                     reader.readAsDataURL(file);
 				}
 			},
 			employeeInsert(){
-				axios.post('/api/employee/',this.form)  //resource_route|api.php|post_method+route= go>Controller>Store()
+				axios.post('/api/employee/',this.form)  
 				.then(() => {
-					this.$router.push({ name: 'employee' })   //(index.vue)all-employee vue page e jabe
+					this.$router.push({ name: 'employee' })   
 					Notification.success()
 				})
 				.catch(error => this.errors = error.response.data.errors)
@@ -158,4 +158,7 @@
 	#add_new {
 		float: right;
 	}
+   .uploading-image{
+     display:flex;
+   }
 </style>

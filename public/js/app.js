@@ -3083,7 +3083,7 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         salary: '',
         address: '',
-        photo: '',
+        photo: 'backend/img/noimage.png',
         phone: '',
         nid: '',
         joining_date: ''
@@ -3095,19 +3095,15 @@ __webpack_require__.r(__webpack_exports__);
     onFileselected: function onFileselected(event) {
       var _this = this;
 
-      //click korlei ai 'event' er vitor pic er sob details chole asbe
-      //console.log(event)
-      var file = event.target.files[0]; //now,File's(name,size,type) available in variable 'file'
+      var file = event.target.files[0];
 
       if (file.size > 1048770) {
-        //made condition: file will less than 1MB
         Notification.image_validation();
       } else {
-        var reader = new FileReader(); //created new instance
+        var reader = new FileReader();
 
         reader.onload = function (event) {
-          _this.form.photo = event.target.result; //storing/taking pic's extention in 'photo'
-
+          _this.form.photo = event.target.result;
           console.log(event.target.result);
         };
 
@@ -3117,12 +3113,10 @@ __webpack_require__.r(__webpack_exports__);
     employeeInsert: function employeeInsert() {
       var _this2 = this;
 
-      axios.post('/api/employee/', this.form) //resource_route|api.php|post_method+route= go>Controller>Store()
-      .then(function () {
+      axios.post('/api/employee/', this.form).then(function () {
         _this2.$router.push({
           name: 'employee'
-        }); //(index.vue)all-employee vue page e jabe
-
+        });
 
         Notification.success();
       })["catch"](function (error) {
@@ -11338,7 +11332,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#add_new {\n\tfloat: right;\n}\n", ""]);
+exports.push([module.i, "\n#add_new {\n\t\tfloat: right;\n}\n.uploading-image{\n     display:flex;\n}\n", ""]);
 
 // exports
 
@@ -53085,6 +53079,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("img", {
+                      staticClass: "img-thumbnail",
                       staticStyle: { height: "150px", width: "150px" },
                       attrs: { src: _vm.form.photo }
                     })
