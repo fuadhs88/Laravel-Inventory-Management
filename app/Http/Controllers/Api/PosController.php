@@ -98,9 +98,9 @@ class PosController extends Controller
     {
         $month = date('m');
         $year = date('Y');
-        $expense = DB::table("orders")
-            ->whereMonth('order_date',$month)
-            ->whereYear('order_date',$year)
+        $expense = DB::table("expenses")
+            ->whereMonth('expense_date',$month)
+            ->whereYear('expense_date',$year)
             ->sum('amount');
         return response()->json($expense);
     }

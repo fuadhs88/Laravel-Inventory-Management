@@ -3935,10 +3935,10 @@ __webpack_require__.r(__webpack_exports__);
         return _this3.due = data;
       });
     },
-    TodayExpense: function TodayExpense() {
+    MonthlyExpense: function MonthlyExpense() {
       var _this4 = this;
 
-      MonthlyExpense.get('/api/monthly/expense').then(function (_ref4) {
+      axios.get('/api/monthly/expense').then(function (_ref4) {
         var data = _ref4.data;
         return _this4.expense = data;
       });
@@ -54534,7 +54534,7 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: " text-white stretched-link", attrs: { href: "#" } },
-          [_vm._v("Monthly Sell")]
+          [_vm._v("This Month Sell")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: " text-white" }, [
@@ -54580,7 +54580,7 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: " text-white stretched-link", attrs: { href: "#" } },
-          [_vm._v("Today Due")]
+          [_vm._v("This Month Due")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: " text-white" }, [
@@ -54603,7 +54603,7 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: " text-white stretched-link", attrs: { href: "#" } },
-          [_vm._v("Today Expense")]
+          [_vm._v("This Month Expense")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: " text-white" }, [

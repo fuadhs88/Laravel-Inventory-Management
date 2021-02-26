@@ -11,7 +11,7 @@
         <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(45deg,#30496B,#30B8D2)">
             <div class="card-body">{{ Number(monthlysell).toLocaleString() }} IDR</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class=" text-white stretched-link" href="#">Monthly Sell</a>
+                <a class=" text-white stretched-link" href="#">This Month Sell</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(-45deg,#DA1FF2,#4C15D0)">
             <div class="card-body">{{ Number(due).toLocaleString() }} IDR</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class=" text-white stretched-link" href="#">Today Due</a>
+                <a class=" text-white stretched-link" href="#">This Month Due</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
@@ -38,7 +38,7 @@
         <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(45deg,#FB7140,#FB9951)">
             <div class="card-body">{{ Number(expense).toLocaleString() }} IDR</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class=" text-white stretched-link" href="#">Today Expense</a>
+                <a class=" text-white stretched-link" href="#">This Month Expense</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
@@ -128,8 +128,8 @@
                 axios.get('/api/monthly/due')
                     .then(({data}) => (this.due = data))
             },
-            TodayExpense(){
-                MonthlyExpense.get('/api/monthly/expense')
+            MonthlyExpense(){
+                axios.get('/api/monthly/expense')
                     .then(({data}) => (this.expense = data))
             },
             Stockout(){
