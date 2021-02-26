@@ -60195,6 +60195,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("img", {
+                      staticClass: "img-thumbnail",
                       staticStyle: { height: "40px", width: "40px" },
                       attrs: { src: _vm.form.photo }
                     })
