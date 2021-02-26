@@ -75714,21 +75714,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_Notification__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./helpers/Notification */ "./resources/js/helpers/Notification.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_5__);
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); //----route imported-------
-
- //---import User Class----
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 
-window.User = _helpers_User__WEBPACK_IMPORTED_MODULE_3__["default"]; //----import Notification Class-------
+window.User = _helpers_User__WEBPACK_IMPORTED_MODULE_3__["default"];
 
-
-window.Notification = _helpers_Notification__WEBPACK_IMPORTED_MODULE_4__["default"]; //----start-----Sweetalert2------
-
+window.Notification = _helpers_Notification__WEBPACK_IMPORTED_MODULE_4__["default"];
 
 window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a;
 var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.mixin({
@@ -75742,9 +75737,7 @@ var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.mixin({
     toast.addEventListener('mouseleave', sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.resumeTimer);
   }
 });
-window.Toast = Toast; //----End-----Sweetalert2------------//------
-//------Reload-----
-
+window.Toast = Toast;
 window.Reload = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_2__["routes"],
@@ -78966,52 +78959,52 @@ var User = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
-//--------Authenticaton_Components----------
+// Authentication
 var Login = __webpack_require__(/*! ./components/auth/login.vue */ "./resources/js/components/auth/login.vue")["default"];
 
 var Register = __webpack_require__(/*! ./components/auth/register.vue */ "./resources/js/components/auth/register.vue")["default"];
 
 var forgetPass = __webpack_require__(/*! ./components/auth/forget.vue */ "./resources/js/components/auth/forget.vue")["default"];
 
-var logout = __webpack_require__(/*! ./components/auth/logout.vue */ "./resources/js/components/auth/logout.vue")["default"]; //-------Home/Dashboard_Components----------
+var logout = __webpack_require__(/*! ./components/auth/logout.vue */ "./resources/js/components/auth/logout.vue")["default"]; // Home/Dashboard
 
 
-var home = __webpack_require__(/*! ./components/home.vue */ "./resources/js/components/home.vue")["default"]; //--------Employee_Components---------------
+var home = __webpack_require__(/*! ./components/home.vue */ "./resources/js/components/home.vue")["default"]; // Employee
 
 
 var storeEmployee = __webpack_require__(/*! ./components/employee/create.vue */ "./resources/js/components/employee/create.vue")["default"];
 
 var employee = __webpack_require__(/*! ./components/employee/index.vue */ "./resources/js/components/employee/index.vue")["default"];
 
-var editEmployee = __webpack_require__(/*! ./components/employee/edit.vue */ "./resources/js/components/employee/edit.vue")["default"]; //--------Supplier_Components---------------
+var editEmployee = __webpack_require__(/*! ./components/employee/edit.vue */ "./resources/js/components/employee/edit.vue")["default"]; // Supplier
 
 
 var storeSupplier = __webpack_require__(/*! ./components/supplier/create.vue */ "./resources/js/components/supplier/create.vue")["default"];
 
 var Supplier = __webpack_require__(/*! ./components/supplier/index.vue */ "./resources/js/components/supplier/index.vue")["default"];
 
-var editSupplier = __webpack_require__(/*! ./components/supplier/edit.vue */ "./resources/js/components/supplier/edit.vue")["default"]; //-------Category_Components---------------
+var editSupplier = __webpack_require__(/*! ./components/supplier/edit.vue */ "./resources/js/components/supplier/edit.vue")["default"]; // Category
 
 
 var storecategory = __webpack_require__(/*! ./components/category/create.vue */ "./resources/js/components/category/create.vue")["default"];
 
 var category = __webpack_require__(/*! ./components/category/index.vue */ "./resources/js/components/category/index.vue")["default"];
 
-var editcategory = __webpack_require__(/*! ./components/category/edit.vue */ "./resources/js/components/category/edit.vue")["default"]; //-------Product_Components---------------
+var editcategory = __webpack_require__(/*! ./components/category/edit.vue */ "./resources/js/components/category/edit.vue")["default"]; // Product
 
 
 var storeproduct = __webpack_require__(/*! ./components/product/create.vue */ "./resources/js/components/product/create.vue")["default"];
 
 var product = __webpack_require__(/*! ./components/product/index.vue */ "./resources/js/components/product/index.vue")["default"];
 
-var editproduct = __webpack_require__(/*! ./components/product/edit.vue */ "./resources/js/components/product/edit.vue")["default"]; //-------Expense_Components---------------
+var editproduct = __webpack_require__(/*! ./components/product/edit.vue */ "./resources/js/components/product/edit.vue")["default"]; // Expense
 
 
 var storeexpense = __webpack_require__(/*! ./components/expense/create.vue */ "./resources/js/components/expense/create.vue")["default"];
 
 var expense = __webpack_require__(/*! ./components/expense/expense.vue */ "./resources/js/components/expense/expense.vue")["default"];
 
-var editexpense = __webpack_require__(/*! ./components/expense/edit.vue */ "./resources/js/components/expense/edit.vue")["default"]; //-------Salary_Components----------------
+var editexpense = __webpack_require__(/*! ./components/expense/edit.vue */ "./resources/js/components/expense/edit.vue")["default"]; // Salary
 
 
 var salary = __webpack_require__(/*! ./components/salary/all_employee.vue */ "./resources/js/components/salary/all_employee.vue")["default"];
@@ -79022,22 +79015,22 @@ var allsalary = __webpack_require__(/*! ./components/salary/index.vue */ "./reso
 
 var viewsalary = __webpack_require__(/*! ./components/salary/view.vue */ "./resources/js/components/salary/view.vue")["default"];
 
-var editsalary = __webpack_require__(/*! ./components/salary/edit.vue */ "./resources/js/components/salary/edit.vue")["default"]; //------Stock_Components-----------------
+var editsalary = __webpack_require__(/*! ./components/salary/edit.vue */ "./resources/js/components/salary/edit.vue")["default"]; // Stocks
 
 
 var editstock = __webpack_require__(/*! ./components/product/edit-stock.vue */ "./resources/js/components/product/edit-stock.vue")["default"];
 
-var stock = __webpack_require__(/*! ./components/product/stock.vue */ "./resources/js/components/product/stock.vue")["default"]; //------Customers_Components-----------------
+var stock = __webpack_require__(/*! ./components/product/stock.vue */ "./resources/js/components/product/stock.vue")["default"]; // Customers
 
 
 var storeCustomer = __webpack_require__(/*! ./components/customer/create.vue */ "./resources/js/components/customer/create.vue")["default"];
 
 var Customer = __webpack_require__(/*! ./components/customer/index.vue */ "./resources/js/components/customer/index.vue")["default"];
 
-var editCustomer = __webpack_require__(/*! ./components/customer/edit.vue */ "./resources/js/components/customer/edit.vue")["default"]; //------point_of_sale-----------------------
+var editCustomer = __webpack_require__(/*! ./components/customer/edit.vue */ "./resources/js/components/customer/edit.vue")["default"]; // Point of Sales
 
 
-var pos = __webpack_require__(/*! ./components/pos/pointofsale.vue */ "./resources/js/components/pos/pointofsale.vue")["default"]; //------Orders_Components-----------------------
+var pos = __webpack_require__(/*! ./components/pos/pointofsale.vue */ "./resources/js/components/pos/pointofsale.vue")["default"]; // Orders
 
 
 var order = __webpack_require__(/*! ./components/order/order.vue */ "./resources/js/components/order/order.vue")["default"];
@@ -79046,7 +79039,7 @@ var vieworder = __webpack_require__(/*! ./components/order/viewOrder.vue */ "./r
 
 var searchorder = __webpack_require__(/*! ./components/order/search.vue */ "./resources/js/components/order/search.vue")["default"];
 
-var routes = [//-------JWT/auth_routes--------
+var routes = [// Authentication
 {
   path: '/',
   component: Login,
@@ -79063,12 +79056,12 @@ var routes = [//-------JWT/auth_routes--------
   path: '/logout',
   component: logout,
   name: 'logout'
-}, //-------home_route----------
+}, // Home/Dashboard
 {
   path: '/home',
   component: home,
   name: 'home'
-}, //-------Employee_routes-------
+}, // Empployee
 {
   path: '/store-employee',
   component: storeEmployee,
@@ -79081,7 +79074,7 @@ var routes = [//-------JWT/auth_routes--------
   path: '/edit-employee/:id',
   component: editEmployee,
   name: 'edit-employee'
-}, //-------Supplier_routes-----------
+}, // Supplier
 {
   path: '/store-supplier',
   component: storeSupplier,
@@ -79094,7 +79087,7 @@ var routes = [//-------JWT/auth_routes--------
   path: '/edit-supplier/:id',
   component: editSupplier,
   name: 'edit-supplier'
-}, //-------Category_routes-----------
+}, // Category
 {
   path: '/store-category',
   component: storecategory,
@@ -79107,7 +79100,7 @@ var routes = [//-------JWT/auth_routes--------
   path: '/edit-category/:id',
   component: editcategory,
   name: 'edit-category'
-}, //-------Product_routes------------
+}, // Product
 {
   path: '/store-product',
   component: storeproduct,
@@ -79120,7 +79113,7 @@ var routes = [//-------JWT/auth_routes--------
   path: '/edit-product/:id',
   component: editproduct,
   name: 'edit-product'
-}, //-------Expense_routes-----------
+}, // Expense
 {
   path: '/store-expense',
   component: storeexpense,
@@ -79133,7 +79126,7 @@ var routes = [//-------JWT/auth_routes--------
   path: '/edit-expense/:id',
   component: editexpense,
   name: 'edit-expense'
-}, //-------Salary_routes------------
+}, // Salary
 {
   path: '/given-salary',
   component: salary,
@@ -79154,7 +79147,7 @@ var routes = [//-------JWT/auth_routes--------
   path: '/edit-salary/:id',
   component: editsalary,
   name: 'edit-salary'
-}, //-------Stock_routes------------
+}, // Stokcs
 {
   path: '/stock',
   component: stock,
@@ -79163,7 +79156,7 @@ var routes = [//-------JWT/auth_routes--------
   path: '/edit-stock/:id',
   component: editstock,
   name: 'edit-stock'
-}, //-------Customers---------------
+}, // Customers
 {
   path: '/store-Customer',
   component: storeCustomer,
@@ -79176,12 +79169,12 @@ var routes = [//-------JWT/auth_routes--------
   path: '/edit-Customer/:id',
   component: editCustomer,
   name: 'edit-Customer'
-}, //-------point of sale-----------
+}, // Point of Sales
 {
   path: '/pos',
   component: pos,
   name: 'pos'
-}, //-------Order-----------
+}, // Order
 {
   path: '/order',
   component: order,
