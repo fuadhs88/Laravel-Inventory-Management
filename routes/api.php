@@ -52,5 +52,11 @@ Route::get('/monthly/sell','Api\PosController@MonthlySell');
 Route::get('/monthly/income','Api\PosController@MonthlyIncome');
 Route::get('/monthly/due','Api\PosController@MonthlyDue');
 Route::get('/monthly/expense','Api\PosController@MonthlyExpense');
-Route::get('/stockout','Api\PosController@Stockout');
+Route::get('/availstock','Api\PosController@AvailableStock');
+Route::get('/total/stock','Api\PosController@TotalStock');
+Route::get('/total/asset','Api\PosController@TotalAsset');
+Route::get('/total/order','Api\PosController@TotalTransaction');
+Route::get('/stockout','Api\PosController@StockOut');
+Route::get('/total/customer','Api\PosController@TotalCustomers');
+Route::get('/total/supplier','Api\PosController@TotalSuppliers');
 

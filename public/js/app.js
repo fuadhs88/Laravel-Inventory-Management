@@ -3839,6 +3839,100 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
     if (!User.loggedIn()) {
@@ -3852,7 +3946,13 @@ __webpack_require__.r(__webpack_exports__);
     this.MonthlyIncome();
     this.MonthlyDue();
     this.MonthlyExpense();
-    this.Stockout();
+    this.AvailableStock();
+    this.TotalStock();
+    this.TotalAsset();
+    this.TotalTransaction();
+    this.StockOut();
+    this.TotalCustomers();
+    this.TotalSuppliers();
   },
   data: function data() {
     return {
@@ -3860,7 +3960,13 @@ __webpack_require__.r(__webpack_exports__);
       income: '',
       expense: '',
       due: '',
-      products: ''
+      products: '',
+      totalstock: '',
+      totalasset: '',
+      totalorder: '',
+      itemout: '',
+      totalcustomer: '',
+      totalsupplier: ''
     };
   },
   methods: {
@@ -3896,12 +4002,60 @@ __webpack_require__.r(__webpack_exports__);
         return _this4.expense = data;
       });
     },
-    Stockout: function Stockout() {
+    AvailableStock: function AvailableStock() {
       var _this5 = this;
 
-      axios.get('/api/stockout').then(function (_ref5) {
+      axios.get('/api/availstock').then(function (_ref5) {
         var data = _ref5.data;
         return _this5.products = data;
+      });
+    },
+    TotalStock: function TotalStock() {
+      var _this6 = this;
+
+      axios.get('/api/total/stock').then(function (_ref6) {
+        var data = _ref6.data;
+        return _this6.totalstock = data;
+      });
+    },
+    TotalAsset: function TotalAsset() {
+      var _this7 = this;
+
+      axios.get('/api/total/asset').then(function (_ref7) {
+        var data = _ref7.data;
+        return _this7.totalasset = data;
+      });
+    },
+    TotalTransaction: function TotalTransaction() {
+      var _this8 = this;
+
+      axios.get('/api/total/order').then(function (_ref8) {
+        var data = _ref8.data;
+        return _this8.totalorder = data;
+      });
+    },
+    StockOut: function StockOut() {
+      var _this9 = this;
+
+      axios.get('/api/stockout').then(function (_ref9) {
+        var data = _ref9.data;
+        return _this9.itemout = data;
+      });
+    },
+    TotalCustomers: function TotalCustomers() {
+      var _this10 = this;
+
+      axios.get('/api/total/customer').then(function (_ref10) {
+        var data = _ref10.data;
+        return _this10.totalcustomer = data;
+      });
+    },
+    TotalSuppliers: function TotalSuppliers() {
+      var _this11 = this;
+
+      axios.get('/api/total/supplier').then(function (_ref11) {
+        var data = _ref11.data;
+        return _this11.totalsupplier = data;
       });
     }
   }
@@ -54216,33 +54370,20 @@ var render = function() {
             staticClass: "card text-white mb-4 shadow",
             staticStyle: {
               border: "none",
-              "background-image": "linear-gradient(45deg,#30496B,#30B8D2)"
+              "background-image": "linear-gradient(-45deg,#DA1FF2,#4C15D0)"
             }
           },
           [
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(_vm._s(Number(_vm.monthlysell).toLocaleString()) + " IDR")
-            ]),
-            _vm._v(" "),
-            _vm._m(1)
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-xl-3 col-md-6" }, [
-        _c(
-          "div",
-          {
-            staticClass: "card text-white mb-4 shadow",
-            staticStyle: {
-              border: "none",
-              "background-image":
-                "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(142,187,49,1) 0%, rgba(0,255,145,1) 100%)"
-            }
-          },
-          [
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(_vm._s(Number(_vm.income).toLocaleString()) + " IDR")
+            _c("div", { staticClass: "row" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-10" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _vm._v(
+                    _vm._s(Number(_vm.monthlysell).toLocaleString()) + " IDR"
+                  )
+                ])
+              ])
             ]),
             _vm._v(" "),
             _vm._m(2)
@@ -54261,11 +54402,17 @@ var render = function() {
             }
           },
           [
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(_vm._s(Number(_vm.due).toLocaleString()) + " IDR")
+            _c("div", { staticClass: "row" }, [
+              _vm._m(3),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-10" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _vm._v(_vm._s(Number(_vm.income).toLocaleString()) + " IDR")
+                ])
+              ])
             ]),
             _vm._v(" "),
-            _vm._m(3)
+            _vm._m(4)
           ]
         )
       ]),
@@ -54277,15 +54424,157 @@ var render = function() {
             staticClass: "card text-white mb-4 shadow",
             staticStyle: {
               border: "none",
-              "background-image": "linear-gradient(45deg,#FB7140,#FB9951)"
+              "background-image": "linear-gradient(-45deg,#DA1FF2,#4C15D0)"
             }
           },
           [
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(_vm._s(Number(_vm.expense).toLocaleString()) + " IDR")
+            _c("div", { staticClass: "row" }, [
+              _vm._m(5),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-10" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _vm._v(_vm._s(Number(_vm.due).toLocaleString()) + " IDR")
+                ])
+              ])
             ]),
             _vm._v(" "),
-            _vm._m(4)
+            _vm._m(6)
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-3 col-md-6" }, [
+        _c(
+          "div",
+          {
+            staticClass: "card text-white mb-4 shadow",
+            staticStyle: {
+              border: "none",
+              "background-image": "linear-gradient(-45deg,#DA1FF2,#4C15D0)"
+            }
+          },
+          [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(7),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-10" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _vm._v(_vm._s(Number(_vm.expense).toLocaleString()) + " IDR")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(8)
+          ]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-xl-3 col-md-6" }, [
+        _c(
+          "div",
+          {
+            staticClass: "card text-white mb-4 shadow",
+            staticStyle: {
+              border: "none",
+              "background-image":
+                "linear-gradient(to right, #868f96 0%, #596164 100%)"
+            }
+          },
+          [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(9),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-10" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _vm._v(_vm._s(Number(_vm.totalasset).toLocaleString()))
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(10)
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-3 col-md-6" }, [
+        _c(
+          "div",
+          {
+            staticClass: "card text-white mb-4 shadow",
+            staticStyle: {
+              border: "none",
+              "background-image":
+                "linear-gradient(to right, #868f96 0%, #596164 100%)"
+            }
+          },
+          [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(11),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-10" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _vm._v(_vm._s(Number(_vm.totalstock).toLocaleString()))
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(12)
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-3 col-md-6" }, [
+        _c(
+          "div",
+          {
+            staticClass: "card text-white mb-4 shadow",
+            staticStyle: {
+              border: "none",
+              "background-image":
+                "linear-gradient(to right, #868f96 0%, #596164 100%)"
+            }
+          },
+          [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(13),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-10" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _vm._v(_vm._s(Number(_vm.totalorder).toLocaleString()))
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(14)
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-3 col-md-6" }, [
+        _c(
+          "div",
+          {
+            staticClass: "card text-white mb-4 shadow",
+            staticStyle: {
+              border: "none",
+              "background-image":
+                "linear-gradient(to right, #868f96 0%, #596164 100%)"
+            }
+          },
+          [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(15),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-10" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _vm._v(_vm._s(Number(_vm.itemout).toLocaleString()))
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(16)
           ]
         )
       ])
@@ -54294,7 +54583,7 @@ var render = function() {
     _c("div", { staticClass: "row my-3" }, [
       _c("div", { staticClass: "col-xl-12" }, [
         _c("div", { staticClass: "card shadow" }, [
-          _vm._m(5),
+          _vm._m(17),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c("div", { staticClass: "card-body pt-0" }, [
@@ -54307,7 +54596,7 @@ var render = function() {
                     attrs: { id: "", width: "100%", cellspacing: "0" }
                   },
                   [
-                    _vm._m(6),
+                    _vm._m(18),
                     _vm._v(" "),
                     _c(
                       "tbody",
@@ -54377,6 +54666,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("i", { staticClass: "fas fa-chart-bar fa-lg" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
       "div",
       {
@@ -54400,6 +54699,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("i", { staticClass: "fas fa-chart-bar fa-lg" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
       "div",
       {
@@ -54410,7 +54719,7 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: " text-white stretched-link", attrs: { href: "#" } },
-          [_vm._v("Today Income")]
+          [_vm._v("This Month Income")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: " text-white" }, [
@@ -54418,6 +54727,16 @@ var staticRenderFns = [
         ])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("i", { staticClass: "fas fa-chart-bar fa-lg" })
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -54446,6 +54765,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("i", { staticClass: "fas fa-chart-bar fa-lg" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
       "div",
       {
@@ -54457,6 +54786,138 @@ var staticRenderFns = [
           "a",
           { staticClass: " text-white stretched-link", attrs: { href: "#" } },
           [_vm._v("This Month Expense")]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: " text-white" }, [
+          _c("i", { staticClass: "fas fa-angle-right" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("i", { staticClass: "fas fa-chart-bar fa-lg" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-footer d-flex align-items-center justify-content-between"
+      },
+      [
+        _c(
+          "a",
+          { staticClass: " text-white stretched-link", attrs: { href: "#" } },
+          [_vm._v("Total Revenue Asset")]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: " text-white" }, [
+          _c("i", { staticClass: "fas fa-angle-right" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("i", { staticClass: "fas fa-cube fa-lg" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-footer d-flex align-items-center justify-content-between"
+      },
+      [
+        _c(
+          "a",
+          { staticClass: " text-white stretched-link", attrs: { href: "#" } },
+          [_vm._v("Available Stock Item")]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: " text-white" }, [
+          _c("i", { staticClass: "fas fa-angle-right" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("i", { staticClass: "fab fa-shopify fa-lg" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-footer d-flex align-items-center justify-content-between"
+      },
+      [
+        _c(
+          "a",
+          { staticClass: " text-white stretched-link", attrs: { href: "#" } },
+          [_vm._v("Total Transaction")]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: " text-white" }, [
+          _c("i", { staticClass: "fas fa-angle-right" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("i", { staticClass: "fas fa-cubes fa-lg" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-footer d-flex align-items-center justify-content-between"
+      },
+      [
+        _c(
+          "a",
+          { staticClass: " text-white stretched-link", attrs: { href: "#" } },
+          [_vm._v("Total Stock-Out")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: " text-white" }, [

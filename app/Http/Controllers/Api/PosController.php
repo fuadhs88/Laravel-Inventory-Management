@@ -59,8 +59,8 @@ class PosController extends Controller
         return response('done');
     }
 
+//--------- Widget Card Dashboard ---------
 
-//----------------------------------------- Card Dashboard Component
     public function MonthlySell()
     {
         $month = date('m');
@@ -105,10 +105,46 @@ class PosController extends Controller
         return response()->json($expense);
     }
 
-    public function Stockout()
+    public function AvailableStock()
     {
-        $stockout = DB::table("products")->get();
-        return response()->json($stockout);
+        $availstock = DB::table("products")->get();
+        return response()->json($availstock);
+    }
+
+    public function TotalStock()
+    {
+        $totalproduct = DB::table("products")->sum('product_quantity');
+        return response()->json($totalproduct);
+    }
+
+    public function TotalAsset()
+    {
+        $totalasset = DB::table("products")->sum('buying_price');
+        return response()->json($totalasset);
+    }
+    
+    public function TotalTransaction()
+    {
+        $totalorder = DB::table("orders")->count('id');
+        return response()->json($totalorder);
+    }
+
+    public function StockOut()
+    {
+        $itemout = DB::table("orders")->sum('qty');
+        return response()->json($itemout);
+    }
+
+    public function TotalCustomers()
+    {
+        $totalcustomer = DB::table("customers")->count('id');
+        return response()->json($totalcustomer);
+    }
+
+    public function TotalSuppliers()
+    {
+        $totalsupplier = DB::table("suppliers")->count('id');
+        return response()->json($totalsupplier);
     }
 
 }

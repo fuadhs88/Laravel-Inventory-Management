@@ -7,8 +7,15 @@
 </ol>
 <div class="row">
     <div class="col-xl-3 col-md-6">
-        <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(45deg,#30496B,#30B8D2)">
-            <div class="card-body">{{ Number(monthlysell).toLocaleString() }} IDR</div>
+        <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(-45deg,#DA1FF2,#4C15D0);">
+            <div class="row">
+                <div class="col-2">
+                    <div class="card-body"><i class="fas fa-chart-bar fa-lg"></i></div>
+                </div>
+                <div class="col-10">
+                    <div class="card-body">{{ Number(monthlysell).toLocaleString() }} IDR</div>
+                </div>
+            </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class=" text-white stretched-link" href="#">This Month Sell</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
@@ -16,17 +23,31 @@
         </div>
     </div>
     <div class="col-xl-3 col-md-6">
-        <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(142,187,49,1) 0%, rgba(0,255,145,1) 100%);">
-            <div class="card-body">{{ Number(income).toLocaleString() }} IDR</div>
+        <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(-45deg,#DA1FF2,#4C15D0);">
+            <div class="row">
+                <div class="col-2">
+                    <div class="card-body"><i class="fas fa-chart-bar fa-lg"></i></div>
+                </div>
+                <div class="col-10">
+                    <div class="card-body">{{ Number(income).toLocaleString() }} IDR</div>
+                </div>
+            </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class=" text-white stretched-link" href="#">Today Income</a>
+                <a class=" text-white stretched-link" href="#">This Month Income</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(-45deg,#DA1FF2,#4C15D0)">
-            <div class="card-body">{{ Number(due).toLocaleString() }} IDR</div>
+            <div class="row">
+                <div class="col-2">
+                    <div class="card-body"><i class="fas fa-chart-bar fa-lg"></i></div>
+                </div>
+                <div class="col-10">
+                    <div class="card-body">{{ Number(due).toLocaleString() }} IDR</div>
+                </div>
+            </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class=" text-white stretched-link" href="#">This Month Due</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
@@ -34,15 +55,88 @@
         </div>
     </div>
     <div class="col-xl-3 col-md-6">
-        <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(45deg,#FB7140,#FB9951)">
-            <div class="card-body">{{ Number(expense).toLocaleString() }} IDR</div>
+        <div class="card text-white mb-4 shadow" style="border: none;background-image:linear-gradient(-45deg,#DA1FF2,#4C15D0)">
+            <div class="row">
+                <div class="col-2">
+                    <div class="card-body"><i class="fas fa-chart-bar fa-lg"></i></div>
+                </div>
+                <div class="col-10">
+                    <div class="card-body">{{ Number(expense).toLocaleString() }} IDR</div>
+                </div>
+            </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class=" text-white stretched-link" href="#">This Month Expense</a>
                 <div class=" text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
     </div>
-</div>  
+</div>
+<div class="row">
+    <div class="col-xl-3 col-md-6">
+        <div class="card text-white mb-4 shadow" style="border: none;background-image: linear-gradient(to right, #868f96 0%, #596164 100%);">
+            <div class="row">
+                <div class="col">
+                    <div class="card-body"><i class="fas fa-chart-bar fa-lg"></i></div>
+                </div>
+                <div class="col-10">
+                    <div class="card-body">{{ Number(totalasset).toLocaleString() }}</div>
+                </div>
+            </div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class=" text-white stretched-link" href="#">Total Revenue Asset</a>
+                <div class=" text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card text-white mb-4 shadow" style="border: none;background-image: linear-gradient(to right, #868f96 0%, #596164 100%);">
+            <div class="row">
+                <div class="col">
+                    <div class="card-body"><i class="fas fa-cube fa-lg"></i></div>
+                </div>
+                <div class="col-10">
+                    <div class="card-body">{{ Number(totalstock).toLocaleString() }}</div>
+                </div>
+            </div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class=" text-white stretched-link" href="#">Available Stock Item</a>
+                <div class=" text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card text-white mb-4 shadow" style="border: none;background-image: linear-gradient(to right, #868f96 0%, #596164 100%);">
+            <div class="row">
+                <div class="col">
+                    <div class="card-body"><i class="fab fa-shopify fa-lg"></i></div>
+                </div>
+                <div class="col-10">
+                    <div class="card-body">{{ Number(totalorder).toLocaleString() }}</div>
+                </div>
+            </div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class=" text-white stretched-link" href="#">Total Transaction</a>
+                <div class=" text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card text-white mb-4 shadow" style="border: none;background-image: linear-gradient(to right, #868f96 0%, #596164 100%);">
+            <div class="row">
+                <div class="col">
+                    <div class="card-body"><i class="fas fa-cubes fa-lg"></i></div>
+                </div>
+                <div class="col-10">
+                    <div class="card-body">{{ Number(itemout).toLocaleString() }}</div>
+                </div>
+            </div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class=" text-white stretched-link" href="#">Total Stock-Out</a>
+                <div class=" text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="row my-3">
     <div class="col-xl-12">
@@ -100,7 +194,13 @@
             this.MonthlyIncome();
             this.MonthlyDue();
             this.MonthlyExpense();
-            this.Stockout();
+            this.AvailableStock();
+            this.TotalStock();
+            this.TotalAsset();
+            this.TotalTransaction();
+            this.StockOut();
+            this.TotalCustomers();
+            this.TotalSuppliers();
         },
         data(){
             return{
@@ -109,6 +209,12 @@
                 expense:'',
                 due:'',
                 products:'',
+                totalstock:'',
+                totalasset:'',
+                totalorder:'',
+                itemout:'',
+                totalcustomer:'',
+                totalsupplier:''
             }
         },
         methods:{
@@ -130,9 +236,33 @@
                 axios.get('/api/monthly/expense')
                     .then(({data}) => (this.expense = data))
             },
-            Stockout(){
-                axios.get('/api/stockout')
+            AvailableStock(){
+                axios.get('/api/availstock')
                     .then(({data}) => (this.products = data))
+            },
+            TotalStock(){
+                axios.get('/api/total/stock')
+                    .then(({data}) => (this.totalstock = data))
+            },
+            TotalAsset(){
+                axios.get('/api/total/asset')
+                    .then(({data}) => (this.totalasset = data))
+            },
+            TotalTransaction(){
+                axios.get('/api/total/order')
+                    .then(({data}) => (this.totalorder = data))
+            },
+            StockOut(){
+                axios.get('/api/stockout')
+                    .then(({data}) => (this.itemout = data))
+            },
+            TotalCustomers(){
+                axios.get('/api/total/customer')
+                    .then(({data}) => (this.totalcustomer = data))
+            },
+            TotalSuppliers(){
+                axios.get('/api/total/supplier')
+                    .then(({data}) => (this.totalsupplier = data))
             },
         }
     }
