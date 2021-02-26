@@ -5128,7 +5128,7 @@ __webpack_require__.r(__webpack_exports__);
         buying_price: '',
         selling_price: '',
         buying_date: '',
-        image: '',
+        image: 'backend/img/noimage.png',
         product_quantity: ''
       },
       errors: {},
@@ -57185,6 +57185,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("img", {
+                        staticClass: "img-thumbnail",
                         staticStyle: { height: "150px", width: "150px" },
                         attrs: { src: _vm.form.image }
                       })

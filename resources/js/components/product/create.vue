@@ -112,7 +112,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img :src="form.image" style="height:150px; width: 150px;">
+                                    <img :src="form.image" class="img-thumbnail" style="height:150px; width: 150px;">
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                     buying_price:'',
                     selling_price : '',
                     buying_date:'',
-                    image:'',
+                    image:'backend/img/noimage.png',
                     product_quantity:''
                 },
                 errors:{},
