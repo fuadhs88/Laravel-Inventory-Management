@@ -78689,13 +78689,11 @@ var AppStorage = /*#__PURE__*/function () {
   _createClass(AppStorage, [{
     key: "storeToken",
     value: function storeToken(token) {
-      //--To store the 'token' in browser's "Application > Local Storage"
       localStorage.setItem('token', token);
     }
   }, {
     key: "storeUser",
     value: function storeUser(user) {
-      //----To store user's all info-----
       localStorage.setItem('user', user);
     }
   }, {
@@ -78707,7 +78705,6 @@ var AppStorage = /*#__PURE__*/function () {
   }, {
     key: "clear",
     value: function clear() {
-      //-------for logout-----
       localStorage.removeItem('token');
       localStorage.removeItem('user');
     }

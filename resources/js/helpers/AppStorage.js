@@ -1,10 +1,10 @@
 class AppStorage{
 
-    storeToken(token){      //--To store the 'token' in browser's "Application > Local Storage"
+    storeToken(token){ 
         localStorage.setItem('token',token);
     }
 
-    storeUser(user){       //----To store user's all info-----
+    storeUser(user){      
         localStorage.setItem('user',user);
     }
 
@@ -13,7 +13,7 @@ class AppStorage{
         this.storeUser(user)
     }
 
-    clear(){              //-------for logout-----
+    clear(){             
         localStorage.removeItem('token')
         localStorage.removeItem('user')
     }
