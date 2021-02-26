@@ -1,14 +1,11 @@
 <template>
 	<div>
-		<!-- Breadcrumbs-->
 		<ol class="breadcrumb mt-3 shadow">		
 			<li class="breadcrumb-item">
 				<a href="#">Dashboard</a>
 			</li>
 			<li class="breadcrumb-item active">Employee / Add</li>
 		</ol>
-
-		<!-- Icon Cards-->
 		<div style="margin-bottom:2rem">
 			<div class="card shadow">	    
 				<div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">  

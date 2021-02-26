@@ -1,13 +1,11 @@
 <template>
     <div>
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb mt-3 shadow">
             <li class="breadcrumb-item">
                 <router-link to="/"><a href="#">Dashboard</a></router-link>
             </li>
             <li class="breadcrumb-item active">All Category</li>
         </ol>
-        <!-- Icon Cards-->
         <div class="card shadow" style="margin-bottom:2rem">
             <div class="card-header text-primary" style="font-size: 20px; font-weight:700;">
                 <i class="fas fa-chart-area"></i>
@@ -21,7 +19,6 @@
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
                             <input type="text" v-model="searchTerm" class="form-control" placeholder="Search Catagory Name" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
-                        <!-- <input type="text" v-model="searchTerm" class="form-control d-inline" style="width:200px;" placeholder="Search by name"><br><br> -->
                         <table class="table table-striped table-hover" id="" width="100%" cellspacing="0" style="font-size:2vh">
 
                             <thead class="shadow">

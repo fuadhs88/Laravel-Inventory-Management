@@ -1,22 +1,20 @@
 <template>
     <div>
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb mt-3 shadow">    <!--------f------->
+        <ol class="breadcrumb mt-3 shadow">    
             <li class="breadcrumb-item">
                 <a href="#">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">Employee / Edit</li>
         </ol>
-        <!-- Icon Cards-->
         <div style="margin-bottom:2rem">
-            <div class="card shadow">      <!--------f------->
+            <div class="card shadow">      
                 <div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">
                     <i class="fas fa-chart-area"></i>
                     Employee Update
                     <router-link to="/employee" class="btn btn-primary shadow" id="add_new"> All Employee</router-link>
                 </div>
                 <div class="card-body">
-                    <form @submit.prevent="employeeUpdate" enctype="multipart/form-data">   <!----------------->
+                    <form @submit.prevent="employeeUpdate" enctype="multipart/form-data">   
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-md-6">
@@ -81,12 +79,12 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-label-group">                  <!------------------------------>
+                                    <div class="form-label-group">                  
                                         <input type="file" class="btn btn-info" @change="onFileselected">
                                         <small class="text-danger" v-if="errors.photo">{{ errors.photo[0] }}</small>
                                     </div>
                                 </div>
-                                <div class="col-md-6">                      <!----------------------------->
+                                <div class="col-md-6">                      
                                     <img :src="form.photo" class="img-thumbnail" style="height:40px; width: 40px;">
                                 </div>
                             </div>
@@ -116,7 +114,7 @@
                     salary:'',
                     address:'',
                     photo :'',
-                    newphoto:'',   //-------------
+                    newphoto:'',   
                     phone:'',
                     nid : '',
                     joining_date:''
@@ -124,28 +122,28 @@
                 errors:{},
             }
         },
-        created(){                    //---for showing existing data in form to Edit/update
-            let id = this.$route.params.id              //--taking id from route/url
-            axios.get('/api/employee/'+id)              //--targeting show() method
+        created(){                    
+            let id = this.$route.params.id             
+            axios.get('/api/employee/'+id)            
                 .then(({data}) => (this.form = data))
                 .catch()
         },
         methods:{
-            onFileselected(event){          //click korlei ai 'event' er vitor pic er sob details chole asbe
-                let file=event.target.files[0];     //now,File's(name,size,type) available in variable 'file'
-                if (file.size > 1048770) {          //made condition: file will less than 1MB(1024*1024=1048576 byte)
+            onFileselected(event){          
+                let file=event.target.files[0];    
+                if (file.size > 1048770) {         
                     Notification.image_validation()
                 }else{
-                    let reader = new FileReader();       //created new instance
+                    let reader = new FileReader();      
                     reader.onload = event => {
-                        this.form.newphoto = event.target.result    //storing/taking new_pic's extention in 'newphoto'
+                        this.form.newphoto = event.target.result    
                     };
                     reader.readAsDataURL(file);
                 }
             },
-            employeeUpdate(){                       //--updating process are here
-                let id = this.$route.params.id                //--taking id from route/url
-                axios.patch('/api/employee/'+id,this.form)    //--patch will auto call update() mathod
+            employeeUpdate(){                      
+                let id = this.$route.params.id                
+                axios.patch('/api/employee/'+id,this.form)    
                     .then(() => {
                         this.$router.push({ name: 'employee' })
                         Notification.success()

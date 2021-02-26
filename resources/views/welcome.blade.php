@@ -4,10 +4,10 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="csrf-token" content="{{ csrf_token() }}">   <!--this is for 'error free console'/(vue_devTool)-->
+        <meta name="csrf-token" content="{{ csrf_token() }}"> 
         <title>UMKM Gonkricaw</title>
 
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">   <!--must be linked at the Top of All other CSS_files-->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}"> 
         <link href="{{ asset('backend/css/styles.css') }}" rel="stylesheet" />
         <link rel="icon" href="{{ asset('backend/img/logotitle.png') }}" type="image/gif" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Carter+One&display=swap" rel="stylesheet">
@@ -21,20 +21,11 @@
 
     <body class="sb-nav-fixed" style="background-image: url('{{ asset('backend/img/bg.jpg') }}');background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;">
 
-    <div id="app" style="font-family: 'Play', sans-serif">     <!---VUE_JS er jonno ei id='app' div ta niyechi pora/entire body tar jonno--->
-
-    <!-----------start_Top_Navbar----------->
+    <div id="app" style="font-family: 'Play', sans-serif"> 
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" id="topbar" v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/forget' ? false : true" style="display: none;"> <!-------------------->
             <router-link class="navbar-brand" to="/home"> <img src="{{ asset('backend/img/logoNav.png') }}" style="height:40px"></router-link>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                <!-- <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div> -->
             </form>
 
             <ul class="navbar-nav ml-auto ml-md-0">
@@ -44,21 +35,19 @@
                         <a class="dropdown-item" href="#">Settings</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
                         <div class="dropdown-divider"></div>
-                        <router-link class="dropdown-item" to="/logout">Logout</a>   <!------------Logout------------>
+                        <router-link class="dropdown-item" to="/logout">Logout</a>
                     </div>
                 </li>
             </ul>
-        </nav>      <!---End_Top_Navbar--->
+        </nav>
 
-
-<!--------------------Left_Navbar------------------------>
-    <div  id="leftbar" v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/forget' ? false : true" style="display: none;">       <!----------------------------->
+    <div  id="leftbar" v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/forget' ? false : true" style="display: none;">       
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav" style="font-family: 'play', sans-serif;">
                 <nav class="sb-sidenav accordion sb-sidenav-dark shadow" id="sidenavAccordion" >
                     <div class="sb-sidenav-menu">
 
-                        <div class="nav bg-gradient">                       <!----------------------------->
+                        <div class="nav bg-gradient">                       
                             {{-- <div class="sb-sidenav-menu-heading">Core</div> --}}
                             <marquee class="text-white">Aplikasi Inventory Asset Stock Management For Usaha Mikro Kecil Menengah (UMKM) by Muhammad Ishaq KKP@2021</marquee>
                             <router-link class="nav-link shadow" style="background-image:linear-gradient(-45deg,#7D6AE7,#56A2D5)" to="/home">
@@ -71,7 +60,6 @@
                                 <b> Sales </b>
                             </router-link>
 
-                    <!--------------Employee----------->
                             {{-- <div class="sb-sidenav-menu-heading">Interface</div> --}}
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon text-primary"><i class="fas fa-id-card"></i></div>
@@ -85,7 +73,6 @@
                                 </nav>
                             </div>
 
-                    <!--------------Supplier----------->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon text-primary"><i class="fas fa-truck"></i></div>
                                 Suppliers
@@ -98,7 +85,6 @@
                                 </nav>
                             </div>
 
-                    <!--------------Categories----------->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon text-primary"><i class="fas fa-layer-group"></i></div>
                                 Categories
@@ -111,7 +97,6 @@
                                 </nav>
                             </div>
 
-                    <!--------------Product----------->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts4" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon text-primary"><i class="fas fa-layer-group"></i></div>
                                 Products
@@ -124,7 +109,6 @@
                                 </nav>
                             </div>
 
-                    <!--------------Customer----------->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#LayoutsC" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon text-primary"><i class="fas fa-users"></i></div>
                                 Customers
@@ -137,7 +121,6 @@
                                 </nav>
                             </div>
 
-                    <!--------------Expense----------->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts5" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon text-primary"><i class="fas fa-money-bill"></i></div>
                                 Expense
@@ -150,7 +133,6 @@
                                 </nav>
                             </div>
 
-                    <!--------------Salary----------->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts6" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon text-primary"><i class="fas fa-money-bill"></i></div>
                                 Salary
@@ -163,7 +145,6 @@
                                 </nav>
                             </div>
 
-                    <!--------------Orders----------->
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts7" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon text-primary"><i class="fas fa-shopping-cart"></i></div>
                                 Orders
@@ -176,7 +157,6 @@
                                 </nav>
                             </div>
 
-                    <!--------------Stock----------->
                             <router-link class="nav-link collapsed" to="/stock">
                                 <div class="sb-nav-link-icon text-primary"><i class="fas fa-chart-area"></i></div>
                                 Stock
@@ -187,31 +167,24 @@
                 </nav>
             </div>
         </div>
-    </div>  <!---End_Left_Navbar-->
+    </div>
 
-
-<!--------------------Dashboard/Body------------------------>
         <div id="layoutSidenav">
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid" style="font-family: 'Play', sans-serif;">
-                        <router-view></router-view>     <!-------------------------------------->
+                        <router-view></router-view>     
                     </div>
                 </main>
             </div>
-        </div><!---End__Dashboard--->
+        </div>
 
-</div>  <!---End___VUE_JS er jonno j id='app' div ta niyechilam pora body tar jonno--->
+</div>
 
-
-
-
-
-    <!---------JavaScript_external_files-------->
-        <script src="{{ asset('js/app.js') }}"></script>   <!--must be linked at the Top of All other JS_files-->
+        <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('backend/assets/demo/jquery-3.5.1.min.js') }}" crossorigin="anonymous"></script>
 
-        <script>    //<!--Topbar & Navbar Show korano[after login//'token' takle]-->
+        <script>
             let token = localStorage.getItem('token');
             if(token) {
                 $("#topbar").css("display","");
@@ -220,7 +193,6 @@
         </script>
 
         {{-- <script src="{{ asset('backend/assets/demo/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script> --}}
-            <!--//--output e login/setting option gula click kora jacchilo na tai amra ei BS_4 file ta comment korechi--//-->
         <script src="{{ asset('backend/js/scripts.js') }}"></script>
     </body>
 </html>

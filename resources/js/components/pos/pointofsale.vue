@@ -8,8 +8,6 @@
             <li class="breadcrumb-item active">Point of Sales</li>
         </ol>
 
-
-<!--------------Right_Side_"Product"----------1st_task----------1----->
         <div>
             <div class="card border-0 shadow">
                 <div class="card-header text-primary">
@@ -30,11 +28,10 @@
 
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                            <!-----Search----->
                             <input type="text" v-model="searchTerm" class="form-control" placeholder="Search here..."><br>
                             <div class="row">
                                 <div v-for="product in filtersearch" :key="product.id">
-                                    <button class="btn btn-sm" @click.prevent="AddToCart(product.id)">  <!--------3------->
+                                    <button class="btn btn-sm" @click.prevent="AddToCart(product.id)">  
                                         <div class="card shadow" style="width:9.85rem">
                                             <img :src="product.image" class="card-img-top" style="width: 100%;">
                                             <div class="card-body">
@@ -73,7 +70,6 @@
         </div>
     <hr>
         
-    <!--------------------------Left_Side_"Expense Insert"------------2nd_task----------->
         <div>
             <div class="card border-0 shadow" width="100%">
                 <div class="card-header text-primary">
@@ -94,8 +90,8 @@
                             <th scope="col">Action</th>
                         </tr>
                         </thead>
-                        <tbody>                 <!------Expense_Insert_Table(Top_Left)--------->
-                        <tr v-for="card in cards" :key="card.id">       <!-------pos_table---------3----->
+                        <tbody>                 
+                        <tr v-for="card in cards" :key="card.id">       
                             <th>{{ card.pro_name }}</th>
                             <!-- <td><input type="text" readonly="" style="width: 30px;" :value="card.pro_quantity"> -->
                             <td style="text-align:center"><strong>{{ Number(qty).toLocaleString() }}</strong></td>
@@ -103,7 +99,6 @@
                                 <button @click.prevent="increment(card.id)" class="btn btn-sm btn-success"><i class="fas fa-plus-square"></i></button>
                                 <button @click.prevent="decrement(card.id)" class="btn btn-sm btn-danger" v-if="card.pro_quantity >= 2"><i class="fas fa-minus-square"></i></button> 
                                 <button class="btn btn-sm btn-secondary" v-else disabled=""><i class="fas fa-minus-square"></i></button>  
-                                <!-------------->
                             </td>
                             <td>{{ Number(card.product_price).toLocaleString() }} IDR</td>
                             <td>{{ Number(card.sub_total).toLocaleString() }} IDR</td>
@@ -114,7 +109,7 @@
                     </table>
                     <hr>
                 </div>
-                <div class="card-footer">       <!-----Expense_Insert_Table(Middle_Left)------->
+                <div class="card-footer">      
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Total Quantity:
@@ -133,8 +128,8 @@
                             <strong>{{ Number(totalall).toLocaleString() }} IDR</strong>
                         </li>
                     </ul>
-                    <br>                   <!-----Expense_Insert_Table(Bottom_Left)------>
-                    <form @submit.prevent="orderdone">          <!--------------2----------------->
+                    <br>            
+                    <form @submit.prevent="orderdone">       
                         <label>Customer Name</label>
                         <select class="form-control" v-model="customer_id">
                             <option :value="customer.id" v-for="customer in customers" :key="customer.id">{{ customer.name }}</option>
@@ -161,7 +156,6 @@
             </div>
         </div>
         <hr>
-    <!------------------customer add modal------------------2-------->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -228,12 +222,6 @@
                     </div>
                 </div>
             </div>
-    <!------------end customer modal------------------------->
-
-
-
-
-        <!-- Icon Cards-->
     </div>
 </template>
 
@@ -246,51 +234,49 @@
             }
         },
         created(){
-            this.allProduct();    //---------1--
-            this.allCategory();   //---------1--
-            this.allCustomer();     //--------2---
-            this.cartProduct();        //--------3--
+            this.allProduct();    
+            this.allCategory();   
+            this.allCustomer();     
+            this.cartProduct();       
             this.vat();
-            Reload.$on('AfterAdd', ()=>{    //--------3--
+            Reload.$on('AfterAdd', ()=>{    
                 this.cartProduct();
             });
-            Reload.$on('customerReload',()=>{   //--added by me
+            Reload.$on('customerReload',()=>{  
                 this.allCustomer();
             })
         },
         data(){
             return{
-                form:{                   //------2---
-                    // details :'',
-                    // amount:'',
+                form:{                
                     name :'',
                     email :'',
                     address:'',
                     photo :'',
                     phone:'',
                 },
-                customer_id:'',     //--customer_form-
+                customer_id:'',  
                 pay:'',
                 due:'',
                 payby:'',
-                products:[],       //---------1---
-                categories:'',     //---------1---
-                getproducts:[],    //---------1---
-                searchTerm:'',     //---------1---
-                getsearchTerm:'',  //---------1---
-                customers:'',           //-------2---
-                errors:'',         //---------1---
-                cards:[],                   //--------3--
+                products:[],      
+                categories:'',     
+                getproducts:[],   
+                searchTerm:'',     
+                getsearchTerm:'',  
+                customers:'',      
+                errors:'',       
+                cards:[],               
                 vats:''
             }
         },
         computed:{
-            filtersearch(){                          //----------------1-------
+            filtersearch(){                          
                 return this.products.filter(product => {
                     return product.product_name.match(this.searchTerm)
                 })
             },
-            getfiltersearch(){                       //-----------------1-------
+            getfiltersearch(){                      
                 return this.getproducts.filter(getproduct => {
                     return getproduct.product_name.match(this.getsearchTerm)
                 })
@@ -322,7 +308,6 @@
             }
         },
         methods:{
-            //--start cart methods--                //------------------3----
             AddToCart(id){
                 axios.get('/api/addTocart/'+id)
                     .then(() => {
@@ -342,7 +327,7 @@
                         Notification.success()
                     })
             },
-            increment(id){              //------------------4----
+            increment(id){              
                 axios.get('/api/increment/'+id)
                     .then(() => {
                         Reload.$emit('AfterAdd');
@@ -372,30 +357,29 @@
                     this.$router.push({ name: 'home'})
                 })
             },
-            //---End_cart_methods----
 
-            allProduct(){                                         //------------1---
+            allProduct(){                                    
                 axios.get('/api/product')
                     .then(({data}) => (this.products = data))
                     .catch()
             },
-            allCategory(){                                       //-------------1---
+            allCategory(){                                    
                 axios.get('/api/category/')
                     .then(({data}) => (this.categories = data))
                     .catch()
             },
-            allCustomer(){                              //------2----
+            allCustomer(){                             
                 axios.get('/api/Customer/')
                     .then(({data}) => (this.customers = data))
                     .catch()
             },
-            subproduct(id){                                      //-------------1---
+            subproduct(id){                                  
                 axios.get('/api/getting/product/'+id)
                     .then(({data}) => (this.getproducts = data))
                     .catch(error => this.errors = error.response.data.errors)
             },
-            //---image validationmethod---
-            onFileselected(event){                  //------------2----
+
+            onFileselected(event){                  
                 let file=event.target.files[0];
                 if (file.size > 1048770) {
                     Notification.image_validation()
@@ -409,15 +393,12 @@
                     reader.readAsDataURL(file);
                 }
             },
-            customerInsert(){                   //-------------2---
+            customerInsert(){                  
                 axios.post('/api/Customer/',this.form)
                     .then(() => {
                         $('#closeModal').click();
                         Reload.$emit('customerReload');
                         Notification.success()
-                        // this.customers = this.customers.filter(customer =>{   //--Or-/use Reload--
-                        //     return customer.id !=id
-                        // })
                     })
             }
         }

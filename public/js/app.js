@@ -2164,8 +2164,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
     if (User.loggedIn()) {
@@ -2262,8 +2260,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -2308,8 +2304,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -2455,9 +2449,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -2533,8 +2524,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -2753,8 +2742,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -2885,9 +2872,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -2963,9 +2947,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -3238,8 +3219,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -3257,7 +3236,6 @@ __webpack_require__.r(__webpack_exports__);
         address: '',
         photo: '',
         newphoto: '',
-        //-------------
         phone: '',
         nid: '',
         joining_date: ''
@@ -3268,11 +3246,8 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    //---for showing existing data in form to Edit/update
-    var id = this.$route.params.id; //--taking id from route/url
-
-    axios.get('/api/employee/' + id) //--targeting show() method
-    .then(function (_ref) {
+    var id = this.$route.params.id;
+    axios.get('/api/employee/' + id).then(function (_ref) {
       var data = _ref.data;
       return _this.form = data;
     })["catch"]();
@@ -3281,17 +3256,15 @@ __webpack_require__.r(__webpack_exports__);
     onFileselected: function onFileselected(event) {
       var _this2 = this;
 
-      //click korlei ai 'event' er vitor pic er sob details chole asbe
-      var file = event.target.files[0]; //now,File's(name,size,type) available in variable 'file'
+      var file = event.target.files[0];
 
       if (file.size > 1048770) {
-        //made condition: file will less than 1MB(1024*1024=1048576 byte)
         Notification.image_validation();
       } else {
-        var reader = new FileReader(); //created new instance
+        var reader = new FileReader();
 
         reader.onload = function (event) {
-          _this2.form.newphoto = event.target.result; //storing/taking new_pic's extention in 'newphoto'
+          _this2.form.newphoto = event.target.result;
         };
 
         reader.readAsDataURL(file);
@@ -3300,11 +3273,8 @@ __webpack_require__.r(__webpack_exports__);
     employeeUpdate: function employeeUpdate() {
       var _this3 = this;
 
-      //--updating process are here
-      var id = this.$route.params.id; //--taking id from route/url
-
-      axios.patch('/api/employee/' + id, this.form) //--patch will auto call update() mathod
-      .then(function () {
+      var id = this.$route.params.id;
+      axios.patch('/api/employee/' + id, this.form).then(function () {
         _this3.$router.push({
           name: 'employee'
         });
@@ -3384,9 +3354,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -3396,7 +3363,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    //--immediately showing data_table after opening file
     this.allEmployee();
   },
   data: function data() {
@@ -3406,12 +3372,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
-    //----search + show-------
     filtersearch: function filtersearch() {
       var _this = this;
 
       return this.employees.filter(function (employee) {
-        //return employee.phone.match(this.searchTerm)
         return employee.name.toLowerCase().includes(_this.searchTerm.toLowerCase());
       });
     }
@@ -3420,8 +3384,7 @@ __webpack_require__.r(__webpack_exports__);
     allEmployee: function allEmployee() {
       var _this2 = this;
 
-      axios.get('/api/employee/') //--'get' will auto call index()_mathod in controller
-      .then(function (_ref) {
+      axios.get('/api/employee/').then(function (_ref) {
         var data = _ref.data;
         return _this2.employees = data;
       })["catch"]();
@@ -3439,8 +3402,7 @@ __webpack_require__.r(__webpack_exports__);
         confirmButtonText: 'Yes, Delete it!'
       }).then(function (result) {
         if (result.value) {
-          axios["delete"]('/api/employee/' + id) //------------delete-------------
-          .then(function () {
+          axios["delete"]('/api/employee/' + id).then(function () {
             _this3.employees = _this3.employees.filter(function (employee) {
               return employee.id != id;
             });
@@ -3467,8 +3429,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -3606,8 +3566,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -3663,9 +3621,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -3884,8 +3839,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
     if (!User.loggedIn()) {
@@ -3965,8 +3918,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -4194,14 +4145,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -4265,12 +4208,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    // searchDate(){
-    //     var data = {date: this.date}
-    //     axios.post('/api/search/order',data)
-    //         .then(({data}) => (this.orders = data))
-    //         .catch()
-    // },
     searchMonth: function searchMonth() {
       var _this = this;
 
@@ -4428,13 +4365,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -4445,7 +4375,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      //errors:{},
       orders: {},
       details: {}
     };
@@ -4705,18 +4634,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -4728,30 +4645,21 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.allProduct(); //---------1--
-
-    this.allCategory(); //---------1--
-
-    this.allCustomer(); //--------2---
-
-    this.cartProduct(); //--------3--
-
+    this.allProduct();
+    this.allCategory();
+    this.allCustomer();
+    this.cartProduct();
     this.vat();
     Reload.$on('AfterAdd', function () {
-      //--------3--
       _this.cartProduct();
     });
     Reload.$on('customerReload', function () {
-      //--added by me
       _this.allCustomer();
     });
   },
   data: function data() {
     return {
       form: {
-        //------2---
-        // details :'',
-        // amount:'',
         name: '',
         email: '',
         address: '',
@@ -4759,26 +4667,17 @@ __webpack_require__.r(__webpack_exports__);
         phone: ''
       },
       customer_id: '',
-      //--customer_form-
       pay: '',
       due: '',
       payby: '',
       products: [],
-      //---------1---
       categories: '',
-      //---------1---
       getproducts: [],
-      //---------1---
       searchTerm: '',
-      //---------1---
       getsearchTerm: '',
-      //---------1---
       customers: '',
-      //-------2---
       errors: '',
-      //---------1---
       cards: [],
-      //--------3--
       vats: ''
     };
   },
@@ -4786,7 +4685,6 @@ __webpack_require__.r(__webpack_exports__);
     filtersearch: function filtersearch() {
       var _this2 = this;
 
-      //----------------1-------
       return this.products.filter(function (product) {
         return product.product_name.match(_this2.searchTerm);
       });
@@ -4794,7 +4692,6 @@ __webpack_require__.r(__webpack_exports__);
     getfiltersearch: function getfiltersearch() {
       var _this3 = this;
 
-      //-----------------1-------
       return this.getproducts.filter(function (getproduct) {
         return getproduct.product_name.match(_this3.getsearchTerm);
       });
@@ -4832,7 +4729,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    //--start cart methods--                //------------------3----
     AddToCart: function AddToCart(id) {
       axios.get('/api/addTocart/' + id).then(function () {
         Reload.$emit('AfterAdd');
@@ -4854,7 +4750,6 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     increment: function increment(id) {
-      //------------------4----
       axios.get('/api/increment/' + id).then(function () {
         Reload.$emit('AfterAdd');
         Notification.success();
@@ -4898,11 +4793,9 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     },
-    //---End_cart_methods----
     allProduct: function allProduct() {
       var _this7 = this;
 
-      //------------1---
       axios.get('/api/product').then(function (_ref3) {
         var data = _ref3.data;
         return _this7.products = data;
@@ -4911,7 +4804,6 @@ __webpack_require__.r(__webpack_exports__);
     allCategory: function allCategory() {
       var _this8 = this;
 
-      //-------------1---
       axios.get('/api/category/').then(function (_ref4) {
         var data = _ref4.data;
         return _this8.categories = data;
@@ -4920,7 +4812,6 @@ __webpack_require__.r(__webpack_exports__);
     allCustomer: function allCustomer() {
       var _this9 = this;
 
-      //------2----
       axios.get('/api/Customer/').then(function (_ref5) {
         var data = _ref5.data;
         return _this9.customers = data;
@@ -4929,7 +4820,6 @@ __webpack_require__.r(__webpack_exports__);
     subproduct: function subproduct(id) {
       var _this10 = this;
 
-      //-------------1---
       axios.get('/api/getting/product/' + id).then(function (_ref6) {
         var data = _ref6.data;
         return _this10.getproducts = data;
@@ -4937,11 +4827,9 @@ __webpack_require__.r(__webpack_exports__);
         return _this10.errors = error.response.data.errors;
       });
     },
-    //---image validationmethod---
     onFileselected: function onFileselected(event) {
       var _this11 = this;
 
-      //------------2----
       var file = event.target.files[0];
 
       if (file.size > 1048770) {
@@ -4958,13 +4846,10 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     customerInsert: function customerInsert() {
-      //-------------2---
       axios.post('/api/Customer/', this.form).then(function () {
         $('#closeModal').click();
         Reload.$emit('customerReload');
-        Notification.success(); // this.customers = this.customers.filter(customer =>{   //--Or-/use Reload--
-        //     return customer.id !=id
-        // })
+        Notification.success();
       });
     }
   }
@@ -4981,8 +4866,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -5148,7 +5031,7 @@ __webpack_require__.r(__webpack_exports__);
         var reader = new FileReader();
 
         reader.onload = function (event) {
-          _this.form.image = event.target.result; //console.log(event.target.result);
+          _this.form.image = event.target.result;
         };
 
         reader.readAsDataURL(file);
@@ -5193,8 +5076,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -5283,8 +5164,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -5560,9 +5439,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -5638,9 +5514,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -5799,9 +5672,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -5851,8 +5721,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -6063,8 +5931,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -6170,9 +6036,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -6222,9 +6085,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -6418,8 +6278,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
@@ -6445,7 +6303,6 @@ __webpack_require__.r(__webpack_exports__);
     onFileselected: function onFileselected(event) {
       var _this = this;
 
-      //console.log(event)
       var file = event.target.files[0];
 
       if (file.size > 1048770) {
@@ -6488,8 +6345,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -6655,9 +6510,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -56095,7 +55947,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                            Total Quantity:\n                            "
+                    "\n                        Total Quantity:\n                        "
                   ),
                   _c("strong", [
                     _vm._v(_vm._s(Number(_vm.qty).toLocaleString()))
@@ -56111,7 +55963,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                            Sub Total:\n                            "
+                    "\n                        Sub Total:\n                        "
                   ),
                   _c("strong", [
                     _vm._v(
@@ -56129,7 +55981,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                            Vat:\n                            "
+                    "\n                        Vat:\n                        "
                   ),
                   _c("strong", [
                     _vm._v(_vm._s(Number(_vm.pajak).toLocaleString()) + " IDR")
@@ -56145,7 +55997,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                            Total:\n                            "
+                    "\n                        Total:\n                        "
                   ),
                   _c("strong", [
                     _vm._v(

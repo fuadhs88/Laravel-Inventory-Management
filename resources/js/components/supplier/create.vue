@@ -1,13 +1,11 @@
 <template>
     <div>
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb mt-3 shadow">
             <li class="breadcrumb-item">
                 <a href="#">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">Supplier</li>
         </ol>
-        <!-- Icon Cards-->
         <div class="shadow" style="margin-bottom:2rem">
             <div class="card">
                 <div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">
@@ -111,7 +109,6 @@
         },
         methods:{
             onFileselected(event){
-                //console.log(event)
                 let file=event.target.files[0];
                 if (file.size > 1048770) {
                     Notification.image_validation()

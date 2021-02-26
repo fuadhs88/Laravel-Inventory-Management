@@ -40,8 +40,6 @@
                             <div class="form-group">
                                 <label class="mb-1" for="inputConfirmPassword">Confirm Password</label>
                                 <input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm Password" v-model="form.password_confirmation"/>
-
-                                <!-- <small class="text-danger" v-if="errors.password_confirmation" style="color:red">{{ errors.password_confirmation[0] }}</small> -->
                             </div>
                         </div>
                     </div>

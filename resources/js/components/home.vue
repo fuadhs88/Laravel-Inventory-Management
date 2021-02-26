@@ -1,7 +1,6 @@
 
 <template>
     <div>
-<!--------------------Dashboard------------------------>
 <h1 class="mt-4" style="font-weight: 900;color:white">DASHBOARD</h1>
 <ol class="breadcrumb mb-4 shadow">
     <li class="breadcrumb-item active">Summary Report UMKM Gonkricaw</li>
@@ -43,9 +42,8 @@
             </div>
         </div>
     </div>
-</div>      <!------End_Dashboard------>
+</div>  
 
-<!------Stock Products------>
 <div class="row my-3">
     <div class="col-xl-12">
         <div class="card shadow">
@@ -83,7 +81,7 @@
             </div>
         </div>
     </div>
-</div>  <!------End Stock Products------>
+</div>
 
 
     </div>

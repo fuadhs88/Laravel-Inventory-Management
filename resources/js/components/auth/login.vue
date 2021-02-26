@@ -12,14 +12,14 @@
                 <form @submit.prevent="login">   
                     <div class="form-group">
                         <label class="mb-1" for="inputEmailAddress">Email</label>
-                        <input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter Email Address" v-model="form.email"/>     <!------------------------------------>
+                        <input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter Email Address" v-model="form.email"/>
 
                         <small class="text-danger" v-if="errors.email" style="color:red">{{ errors.email[0] }}</small> 
                     </div>
 
                     <div class="form-group">
                         <label class="mb-1" for="inputPassword">Password</label>
-                        <input class="form-control py-4" id="inputPassword" type="password" v-model="form.password" placeholder="Enter Password"/>    <!------------------------------------->
+                        <input class="form-control py-4" id="inputPassword" type="password" v-model="form.password" placeholder="Enter Password"/>
 
                         <small class="text-danger" v-if="errors.password" style="color:red">{{ errors.password[0] }}</small> 
                     </div>

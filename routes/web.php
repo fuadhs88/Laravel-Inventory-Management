@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/{vue_capture?}',function () {    //--here,"vue_capture" is just a random_variable
-    return view('welcome');                 //--if we hit with random route,it will go 'welcome' page
+Route::get('/{vue_capture?}',function () { 
+    return view('welcome');            
 })->where('vue_capture', '[\/\w\.-]*');

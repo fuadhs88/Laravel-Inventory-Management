@@ -1,13 +1,11 @@
 <template>
     <div>
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb mt-3 shadow">
             <li class="breadcrumb-item">
                 <a href="#">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">Orders / Search Order</li>
         </ol>
-        <!-- Icon Cards-->
         <div class="card shadow" style="margin-bottom:2rem">
             <div class="card">
                 <div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">
@@ -15,8 +13,6 @@
                     Search Orders
                     <router-link to="/order" class="btn btn-primary shadow" id="add_new"> Today Order</router-link>
                 </div>
-
-<!------------Search By Date---------------->
 <div class="card-body">
     <div class="row">
         <div class="col-lg-6">
@@ -34,8 +30,6 @@
                 <button type="submit" class="btn btn-primary shadow">Submit</button>
             </form>
         </div>
-
-<!------------Search By Month---------------->
         <div class="col-lg-6">
             <form @submit.prevent="searchMonth">
                 <div class="form-group">
@@ -65,10 +59,9 @@
             </form>
         </div>
     </div>
-</div>  <!-----------End_Search_text_box------------------>
+</div>
 
 <hr>
-<!-----------Search_Result------------------>
     <div class="container" style="margin-bottom:2rem">
         <div class="card">
             <div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">
@@ -119,7 +112,6 @@
             
         </div>
     </div>
-    <!--------End_Search_Result------------>
 <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
 
             </div>
@@ -180,12 +172,6 @@
             },
         },
         methods:{
-            // searchDate(){
-            //     var data = {date: this.date}
-            //     axios.post('/api/search/order',data)
-            //         .then(({data}) => (this.orders = data))
-            //         .catch()
-            // },
             searchMonth(){
                 var data = {month: this.month}
                 axios.post('/api/search/month',data)
