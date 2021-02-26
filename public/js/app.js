@@ -5443,13 +5443,11 @@ __webpack_require__.r(__webpack_exports__);
     axios.get('/api/product/' + id).then(function (_ref) {
       var data = _ref.data;
       return _this.form = data;
-    })["catch"](); //--category collected--
-
+    })["catch"]();
     axios.get('/api/category').then(function (_ref2) {
       var data = _ref2.data;
       return _this.categories = data;
-    }); //--supplier colledted--
-
+    });
     axios.get('/api/supplier/').then(function (_ref3) {
       var data = _ref3.data;
       return _this.suppliers = data;
@@ -57860,6 +57858,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("img", {
+                        staticClass: "img-thumbnail",
                         staticStyle: { height: "40px", width: "40px" },
                         attrs: { src: _vm.form.image }
                       })

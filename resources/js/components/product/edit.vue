@@ -109,7 +109,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img :src="form.image" style="height:40px; width: 40px;">
+                                    <img :src="form.image" class="img-thumbnail" style="height:40px; width: 40px;">
                                 </div>
                             </div>
                         </div>
@@ -155,10 +155,8 @@
             axios.get('/api/product/'+id)
                 .then(({data}) => (this.form = data))
                 .catch()
-            //--category collected--
             axios.get('/api/category')
                 .then(({data}) => (this.categories = data))
-            //--supplier colledted--
             axios.get('/api/supplier/')
                 .then(({data}) => (this.suppliers = data))
         },
