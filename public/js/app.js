@@ -2625,7 +2625,7 @@ __webpack_require__.r(__webpack_exports__);
         name: '',
         email: '',
         address: '',
-        photo: '',
+        photo: 'backend/img/noimage.png',
         phone: ''
       },
       errors: {}
@@ -52161,6 +52161,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("img", {
+                        staticClass: "img-thumbnail",
                         staticStyle: { height: "150px", width: "150px" },
                         attrs: { src: _vm.form.photo }
                       })
@@ -52431,6 +52432,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("img", {
+                        staticClass: "img-thumbnail",
                         staticStyle: { height: "40px", width: "40px" },
                         attrs: { src: _vm.form.photo }
                       })
@@ -53625,6 +53627,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [
                           _c("img", {
+                            staticClass: "img-thumbnail",
                             attrs: { src: employee.photo, id: "em_photo" }
                           })
                         ]),

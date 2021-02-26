@@ -62,7 +62,7 @@
 	                </div>
 	               </div>
 	                <div class="col-md-6">
-	                	<img :src="form.photo" style="height:150px; width: 150px;">
+	                	<img :src="form.photo" class="img-thumbnail" style="height:150px; width: 150px;">
 	                </div>
 	             </div>
 	          </div>
@@ -89,7 +89,7 @@
         			name :'',
         			email :'',
         			address:'',
-        			photo :'',
+        			photo :'backend/img/noimage.png',
         			phone:'',
         		},
         		errors:{},

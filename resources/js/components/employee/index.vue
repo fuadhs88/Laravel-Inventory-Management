@@ -38,7 +38,7 @@
                             <tbody>
                             <tr v-for="employee in filtersearch" :key="employee.id">    <!-------------------------->
                                 <td>{{ employee.name }}</td>
-                                <td><img :src="employee.photo" id="em_photo"></td>   <!--bind(:) korle R {{}} lage na-->
+                                <td><img :src="employee.photo" class="img-thumbnail" id="em_photo"></td>   <!--bind(:) korle R {{}} lage na-->
                                 <td>{{ employee.phone }}</td>
                                 <td>{{ Number(employee.salary).toLocaleString() }} IDR</td>
                                 <td>{{ employee.joining_date }}</td>
