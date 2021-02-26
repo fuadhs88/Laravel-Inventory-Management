@@ -40,7 +40,7 @@
                                 <tr>
                                     <td>Date</td>
                                     <td>:</td>
-                                    <td>{{ orders.order_date }}</td>
+                                    <td>{{ Date(orders.order_date).toLocaleString() }}</td>
                                 </tr>
                                 <tr>
                                     <td>Quantity</td>

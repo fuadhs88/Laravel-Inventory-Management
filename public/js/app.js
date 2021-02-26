@@ -55334,7 +55334,11 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(":")]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(_vm.orders.order_date))])
+                    _c("td", [
+                      _vm._v(
+                        _vm._s(Date(_vm.orders.order_date).toLocaleString())
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("tr", [
