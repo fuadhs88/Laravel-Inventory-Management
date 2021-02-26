@@ -56610,7 +56610,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header text-primary" }, [
       _c("i", { staticClass: "fas fa-chart-area" }),
       _vm._v(" "),
-      _c("b", [_vm._v("Expense Insert")]),
+      _c("b", [_vm._v("Create Sales Order")]),
       _vm._v(" "),
       _c(
         "a",

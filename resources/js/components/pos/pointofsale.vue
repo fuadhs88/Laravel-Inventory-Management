@@ -78,7 +78,7 @@
             <div class="card border-0 shadow" width="100%">
                 <div class="card-header text-primary">
                     <i class="fas fa-chart-area"></i>
-                    <b>Expense Insert</b>
+                    <b>Create Sales Order</b>
                     <a class="btn btn-sm btn-primary text-white shadow" data-toggle="modal" data-target="#exampleModal" id="add_new"> Add Customer</a>
                 </div>
 
