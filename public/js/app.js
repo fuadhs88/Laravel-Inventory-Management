@@ -5133,9 +5133,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       errors: {},
       categories: {},
-      //--to take catagory from 'Category' controller
-      suppliers: {} //--to take supplier from 'Supplier' controller
-
+      suppliers: {}
     };
   },
   methods: {
@@ -5173,7 +5171,6 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this3 = this;
 
-    //fatching data from Controller & keeping it in data() property
     axios.get('/api/category').then(function (_ref) {
       var data = _ref.data;
       return _this3.categories = data;

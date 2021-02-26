@@ -148,8 +148,8 @@
                     product_quantity:''
                 },
                 errors:{},
-                categories:{},      //--to take catagory from 'Category' controller
-                suppliers:{},       //--to take supplier from 'Supplier' controller
+                categories:{},      
+                suppliers:{},       
             }
         },
         methods:{
@@ -175,7 +175,7 @@
                     .catch(error => this.errors = error.response.data.errors)
             },
         },
-        created(){            //fatching data from Controller & keeping it in data() property
+        created(){            
             axios.get('/api/category')
                 .then(({data}) => (this.categories = data))
 
