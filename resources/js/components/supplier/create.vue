@@ -13,11 +13,11 @@
                 <div class="card-header text-primary" style="font-size: 20px; font-weight: 700;">
                     <i class="fas fa-chart-area"></i>
                     Supplier Insert
-                    <router-link to="/supplier" class="btn btn-primary shadow" id="add_new"> All Supplier</router-link>    <!----------->
+                    <router-link to="/supplier" class="btn btn-primary shadow" id="add_new"> All Supplier</router-link> 
                 </div>
 
                 <div class="card-body">
-                    <form @submit.prevent="supplierInsert" enctype="multipart/form-data">   <!--------------------->
+                    <form @submit.prevent="supplierInsert" enctype="multipart/form-data"> 
                         <div class="card-body">
                             <div class="form-group">
                                 <div class="form-row">
@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <img :src="form.photo" style="height:150px; width: 150px;">
+                                        <img :src="form.photo" class="img-thumbnail" style="height:150px; width: 150px;">
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                     email :'',
                     phone:'',
                     address:'',
-                    photo :'',
+                    photo :'backend/img/noimage.png',
                     shopname:''
                 },
                 errors:{},

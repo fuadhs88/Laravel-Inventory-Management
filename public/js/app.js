@@ -6435,7 +6435,7 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         phone: '',
         address: '',
-        photo: '',
+        photo: 'backend/img/noimage.png',
         shopname: ''
       },
       errors: {}
@@ -59894,6 +59894,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "col-md-6" }, [
                         _c("img", {
+                          staticClass: "img-thumbnail",
                           staticStyle: { height: "150px", width: "150px" },
                           attrs: { src: _vm.form.photo }
                         })
