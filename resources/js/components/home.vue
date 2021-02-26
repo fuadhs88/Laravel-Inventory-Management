@@ -1,6 +1,6 @@
 
 <template>
-    <div>   <!-----total_<div>----->
+    <div>
 <!--------------------Dashboard------------------------>
 <h1 class="mt-4" style="font-weight: 900;color:white">DASHBOARD</h1>
 <ol class="breadcrumb mb-4 shadow">
@@ -45,7 +45,7 @@
     </div>
 </div>      <!------End_Dashboard------>
 
-<!------Stock_Out_Products------>
+<!------Stock Products------>
 <div class="row my-3">
     <div class="col-xl-12">
         <div class="card shadow">
@@ -83,10 +83,10 @@
             </div>
         </div>
     </div>
-</div>  <!------End_Stock_ Out_Products------>
+</div>  <!------End Stock Products------>
 
 
-    </div>  <!------End_total_<div>------>
+    </div>
 </template>
 
 
