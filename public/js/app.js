@@ -78842,7 +78842,6 @@ var Token = /*#__PURE__*/function () {
       var payload = this.payload(token);
 
       if (payload) {
-        //iss mane issu_date bojai
         return payload.iss == "http://127.0.0.1:8000/api/auth/login" || "http://127.0.0.1:8000/api/auth/register" ? true : false;
       }
 
@@ -78851,14 +78850,13 @@ var Token = /*#__PURE__*/function () {
   }, {
     key: "payload",
     value: function payload(token) {
-      var payload = token.split('.')[1]; // (2nd value mean) the index after dot(.) of 3 parts of Token (www.jwt.io)
-
-      return this.decode(payload); //decode is just a variable/(function).
+      var payload = token.split('.')[1];
+      return this.decode(payload);
     }
   }, {
     key: "decode",
     value: function decode(payload) {
-      return JSON.parse(atob(payload)); //atob use for encode/decode
+      return JSON.parse(atob(payload));
     }
   }]);
 
