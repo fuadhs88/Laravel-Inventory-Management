@@ -4,7 +4,7 @@
 
 ![image](https://raw.githubusercontent.com/gonkricaw/KKP-Invasset/master/public/backend/img/logoNav.png?)
 
-![Build Status](https://img.shields.io/static/v1.svg?label=Build Version =Alpha =orange) ![Build Status](https://img.shields.io/static/v1.svg?label=Laravel&message=v5.8.38&color=cyan) ![Build Status](https://img.shields.io/static/v1.svg?label=License&message=MIT&color=GREEN)
+![Build Status]((https://img.shields.io/static/v1.svg?label=Build&message=Alpha&color=navy) ![Build Status](https://img.shields.io/static/v1.svg?label=Laravel&message=v5.8.38&color=cyan) ![Build Status](https://img.shields.io/static/v1.svg?label=License&message=MIT&color=GREEN)
 
 Aplikasi Aset Inventory Manajemen berbasis WEB dibuat untuk keperluan Tugas KKP (**_Kuliah Kerja Praktek_**) @STIKOM CKI, Dengan target pengguna para pelaku Usaha Mikro Kecil Menengah (**UMKM**), Yang didukung dengan fitur:
 
