@@ -1,7 +1,5 @@
 # **Aplikasi Aset Inventory Manajemen**
 
----
-
 ![image](https://raw.githubusercontent.com/gonkricaw/KKP-Invasset/master/public/backend/img/logoNav.png?)
 
 ![Build Status](https://img.shields.io/static/v1.svg?label=Build&message=Alpha&color=navy) ![Build Status](https://img.shields.io/static/v1.svg?label=Laravel&message=v5.8.38&color=cyan) ![Build Status](https://img.shields.io/static/v1.svg?label=License&message=MIT&color=GREEN)
