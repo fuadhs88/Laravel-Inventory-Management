@@ -4142,6 +4142,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       orders: [],
+      monthlyorders: [],
       searchTerm: ''
     };
   },
@@ -4161,6 +4162,14 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/api/orders/').then(function (_ref) {
         var data = _ref.data;
         return _this2.orders = data;
+      })["catch"]();
+    },
+    monthOrder: function monthOrder() {
+      var _this3 = this;
+
+      axios.get('/api/monthly/orders/').then(function (_ref2) {
+        var data = _ref2.data;
+        return _this3.monthlyorders = data;
       })["catch"]();
     }
   }
@@ -55048,30 +55057,33 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "tbody",
-                    _vm._l(_vm.filtersearch, function(order) {
-                      return _c("tr", { key: order.id }, [
-                        _c("td", [_vm._v(_vm._s(order.name))]),
+                    _vm._l(_vm.filtersearch, function(monthlyorders) {
+                      return _c("tr", { key: monthlyorders.id }, [
+                        _c("td", [_vm._v(_vm._s(monthlyorders.name))]),
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            _vm._s(Number(order.total).toLocaleString()) +
+                            _vm._s(
+                              Number(monthlyorders.total).toLocaleString()
+                            ) + " IDR"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(Number(monthlyorders.pay).toLocaleString()) +
                               " IDR"
                           )
                         ]),
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
-                            _vm._s(Number(order.pay).toLocaleString()) + " IDR"
+                            _vm._s(Number(monthlyorders.due).toLocaleString()) +
+                              " IDR"
                           )
                         ]),
                         _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            _vm._s(Number(order.due).toLocaleString()) + " IDR"
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(order.payby))]),
+                        _c("td", [_vm._v(_vm._s(monthlyorders.payby))]),
                         _vm._v(" "),
                         _c(
                           "td",
@@ -55083,7 +55095,7 @@ var render = function() {
                                 attrs: {
                                   to: {
                                     name: "view-order",
-                                    params: { id: order.id }
+                                    params: { id: monthlyorders.id }
                                   }
                                 }
                               },
@@ -55120,7 +55132,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("li", { staticClass: "breadcrumb-item active" }, [
-        _vm._v("Today Order")
+        _vm._v("Monthly Order")
       ])
     ])
   },
@@ -55136,7 +55148,7 @@ var staticRenderFns = [
       },
       [
         _c("i", { staticClass: "fas fa-chart-area" }),
-        _vm._v("\n         Today's Order-Table\n       ")
+        _vm._v("\n         Monhtly Order List\n       ")
       ]
     )
   },
@@ -56103,7 +56115,7 @@ var render = function() {
                               [
                                 _c("img", {
                                   staticClass: "card-img-top",
-                                  staticStyle: { width: "100%" },
+                                  staticStyle: { "object-fit": "cover" },
                                   attrs: { src: product.image }
                                 }),
                                 _vm._v(" "),

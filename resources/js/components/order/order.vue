@@ -4,12 +4,12 @@
           <li class="breadcrumb-item">
             <a href="#">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Today Order</li>
+          <li class="breadcrumb-item active">Monthly Order</li>
         </ol>
        <div class="card shadow" style="margin-bottom:2rem">
           <div class="card-header text-primary" style="font-size: 20px; font-weight:700;">
             <i class="fas fa-chart-area"></i>
-            Today's Order-Table
+            Monhtly Order List
           </div>
           <div class="card-body pt-0">
             <div class="card-body">
@@ -33,14 +33,14 @@
                   </thead>
 
                   <tbody>
-                    <tr v-for="order in filtersearch" :key="order.id">
-                      <td>{{ order.name }}</td>
-                      <td>{{ Number(order.total).toLocaleString() }} IDR</td>
-                      <td>{{ Number(order.pay).toLocaleString() }} IDR</td>
-                      <td>{{ Number(order.due).toLocaleString() }} IDR</td>
-                      <td>{{ order.payby }}</td>
+                    <tr v-for="monthlyorders in filtersearch" :key="monthlyorders.id">
+                      <td>{{ monthlyorders.name }}</td>
+                      <td>{{ Number(monthlyorders.total).toLocaleString() }} IDR</td>
+                      <td>{{ Number(monthlyorders.pay).toLocaleString() }} IDR</td>
+                      <td>{{ Number(monthlyorders.due).toLocaleString() }} IDR</td>
+                      <td>{{ monthlyorders.payby }}</td>
                       <td>
-                        <router-link :to="{name: 'view-order', params:{id: order.id} }" class="btn btn-sm btn-info shadow">View</router-link>
+                        <router-link :to="{name: 'view-order', params:{id: monthlyorders.id} }" class="btn btn-sm btn-info shadow">View</router-link>
                       </td>
                     </tr>
                   </tbody>
@@ -67,6 +67,7 @@
         data(){
           return{
             orders:[],
+            monthlyorders:[],
             searchTerm:'',
           }
         },
@@ -81,6 +82,11 @@
           allOrder(){
             axios.get('/api/orders/')
             .then(({data}) => (this.orders = data))
+            .catch()
+          },
+          monthOrder(){
+            axios.get('/api/monthly/orders/')
+            .then(({data}) => (this.monthlyorders = data))
             .catch()
           }
         },

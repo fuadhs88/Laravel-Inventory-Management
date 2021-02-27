@@ -152,7 +152,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts7" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav" style="background-color: #3b3a3ac5">
-                                    <router-link class="nav-link" to="/order">Today Order</router-link>
+                                    <router-link class="nav-link" to="/order">Order List</router-link>
                                     <router-link class="nav-link" to="/searchorder">Search</router-link>
                                 </nav>
                             </div>

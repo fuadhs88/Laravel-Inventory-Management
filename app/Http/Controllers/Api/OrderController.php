@@ -20,6 +20,17 @@ class OrderController extends Controller
         return response()->json($order);
     }
 
+    public function MonthlyOrder()
+    {
+        $data=date('m');
+        $order=DB::table('orders')
+            ->join('customers','orders.customer_id','customers.id')
+            ->where('orders.order_date',$data)
+            ->select('customers.name','orders.*')
+            ->orderBy('orders.id','DESC')->get();
+        return response()->json($order);
+    }
+
     public function OrderDetails($id)
     {
         $orders=DB::table('orders')

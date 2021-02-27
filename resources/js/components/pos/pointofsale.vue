@@ -33,7 +33,7 @@
                                 <div v-for="product in filtersearch" :key="product.id">
                                     <button class="btn btn-sm" @click.prevent="AddToCart(product.id)">  
                                         <div class="card shadow" style="width:9.85rem">
-                                            <img :src="product.image" class="card-img-top" style="width: 100%;">
+                                            <img :src="product.image" class="card-img-top" style="object-fit: cover;">
                                             <div class="card-body">
                                                 <small class="card-title">{{ product.product_name }}</small><br>
                                                 <span class="badge badge-success" style="padding:5px;margin-bottom:10px;margin-top:10px;" v-if="product.product_quantity >= 1"> Availble ({{ Number(product.product_quantity).toLocaleString()  }}) </span>
